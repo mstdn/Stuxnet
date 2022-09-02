@@ -17,7 +17,6 @@ const logout = () => {
 </script>
 <template>
     <div>
-
         <Head :title="title" />
 
         <JetBanner />
