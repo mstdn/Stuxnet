@@ -12,32 +12,33 @@
         </template>
 
 
-        <section class="py-12">
+        <section class="pt-12">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
-                <div class="columns-1 mb-6">
+                <div class="columns-1 py-10">
+                    Meow, meow! I am stux the web cat and I love to create new things for a better digital tomorrow.
+                </div>
+
+
+                <div class="columns-1 mb-10">
 
                     <div class="card lg:card-side bg-base-100">
-                        <figure><img src="https://media.mstdn.social/accounts/avatars/000/005/168/original/3d4b017a1edb6237.png" alt=""></figure>
+                        <figure><img
+                                src="https://media.mstdn.social/accounts/avatars/000/005/168/original/3d4b017a1edb6237.png"
+                                alt=""></figure>
                         <div class="card-body">
-                            <h2 class="card-title">New album is released!</h2>
-                            <p>Click the button to listen on Spotiwhy app.</p>
+                            <h2 class="card-title">@stux</h2>
+                            <p>Follow me on various social media or send me a mail sometimes.</p>
                             <div class="card-actions justify-end">
-                                <button class="btn btn-primary">Listen</button>
+                                <button class="btn btn-primary">Follow</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="columns-1 py-10">
-                    Nunc malesuada dignissim sapien. Proin rhoncus bibendum gravida. Morbi nec risus augue. Ut mollis
-                    congue lectus vel feugiat. Fusce odio enim, facilisis porttitor ultrices sed, molestie vitae erat.
-                    Proin eget nisi felis. Morbi sit amet consectetur quam. Curabitur mattis sollicitudin ex vel
-                    fringilla. Nullam posuere euismod nisl. Integer at metus lectus.
-                </div>
 
 
-                <div class="columns-1 md:columns-2 lg:columns-2 mt-6">
+                <!-- <div class="columns-1 md:columns-2 lg:columns-2 mt-6">
                     <div class="card card-compact w-full bg-base-200">
                         <div class="card-body">
                             <h2 class="card-title">Shoes!</h2>
@@ -56,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>

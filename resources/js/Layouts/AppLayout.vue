@@ -17,6 +17,7 @@ const logout = () => {
 </script>
 <template>
     <div>
+
         <Head :title="title" />
 
         <JetBanner />
@@ -64,7 +65,16 @@ const logout = () => {
                                 </a>
                                 <ul class="p-2 bg-base-100">
                                     <li>
-                                        <a>Later</a>
+                                        <Link href="/privacy-policy"
+                                            :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
+                                        Privacy Policy
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/terms-of-service"
+                                            :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
+                                        Terms of Service
+                                        </Link>
                                     </li>
                                     <li>
                                         <a>Also later</a>
@@ -102,15 +112,15 @@ const logout = () => {
                             </a>
                             <ul class="p-2 bg-base-100">
                                 <li>
-                                    <Link href="/projects/websites"
-                                        :class="{ 'btn-active text-white': $page.url === '/projects/websites' }">
-                                    Websites
+                                    <Link href="/privacy-policy"
+                                        :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
+                                    Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/projects/websites"
-                                        :class="{ 'btn-active text-white': $page.url === '/projects/websites' }">
-                                    Open Source
+                                    <Link href="/terms-of-service"
+                                        :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
+                                    Terms of Service
                                     </Link>
                                 </li>
                             </ul>
@@ -118,7 +128,14 @@ const logout = () => {
                     </ul>
                 </div>
                 <div v-if="$page.props.auth.user === null" class="navbar-end">
-                    <Link href="/register" class="btn">Get started</Link>
+                    <Link href="/register" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
+                        <circle cx="12" cy="10" r="3" />
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                    </Link>
                 </div>
                 <div v-if="$page.props.auth.user !== null" class="navbar-end">
                     <Compose v-if="$page.props.stux === true" />
@@ -167,16 +184,14 @@ const logout = () => {
             </main>
 
 
-
-
         </div>
 
         <footer class="footer footer-center p-10 bg-base-100 dark:bg-base-200 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
-                <a class="link link-hover">Jobs</a>
-                <a class="link link-hover">Press kit</a>
+                <InertiaLink href="/about" preserve-scroll class="link link-hover">About</InertiaLink>
+                <InertiaLink href="/projects" preserve-scroll class="link link-hover">Projects</InertiaLink>
+                <InertiaLink href="/terms-of-service" preserve-scroll class="link link-hover">Terms</InertiaLink>
+                <InertiaLink href="/privacy-policy" preserve-scroll class="link link-hover">Privacy</InertiaLink>
             </div>
             <div>
                 <div class="grid grid-flow-col gap-4">
