@@ -45,9 +45,19 @@ const logout = () => {
                                 About
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
+                                Projects
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" :class="{ 'btn-active text-white': $page.url === '/contact' }">
+                                Contact
+                                </Link>
+                            </li>
                             <li tabindex="0">
                                 <a class="justify-between">
-                                    Projects
+                                    More
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
@@ -55,17 +65,12 @@ const logout = () => {
                                 </a>
                                 <ul class="p-2 bg-base-100">
                                     <li>
-                                        <a>Link</a>
+                                        <a>Later</a>
                                     </li>
                                     <li>
-                                        <a>Submenu 2</a>
+                                        <a>Also later</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <Link href="/contact" :class="{ 'btn-active text-white': $page.url === '/contact' }">
-                                Contact
-                                </Link>
                             </li>
                         </ul>
                     </div>
