@@ -23,11 +23,7 @@ class PostController extends Controller
                     ->select('id', 'description', 'file', 'category_id', 'user_id', 'created_at', 'title', 'link')
                     ->with('user', 'category', 'replies')
                     ->latest()
-                    ->when($request->input('search'), function ($query, $search) {
-                        $query->where('description', 'like', "%{$search}%");
-                    })
                     ->paginate(20)
-                    ->withQueryString()
             ),
         ]);
     }
@@ -80,9 +76,9 @@ class PostController extends Controller
             'post'          =>  PostResource::make($post),
             'replies'       =>  ReplyResource::collection(
                 $post->replies()
-                ->with('user')
-                ->oldest()
-                ->paginate(15)
+                    ->with('user')
+                    ->oldest()
+                    ->paginate(15)
             )
         ]);
     }

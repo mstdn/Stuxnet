@@ -168,7 +168,7 @@ let props = defineProps({
 
                     <Empty v-if="posts.meta.total === 0" class="columns-1 mt-20" />
 
-                    <div class="columns-1 md:columns-3 lg:columns-4">
+                    <div class="columns-1 md:columns-3 lg:columns-3">
                         <PostCard class="mb-4" v-for="post in posts.data" :key="post.id" :post="post" />
                     </div>
 
