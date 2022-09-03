@@ -49,7 +49,7 @@ function destroy(id) {
         <div class="hero py-10 md:py-16 dark:bg-base-300 bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Browse Projects</h1>
+                    <h1 class="text-5xl font-bold">Stuxprojects</h1>
                     <p class="py-6">Discover the projects I have done in the past or still working on.</p>
                 </div>
             </div>

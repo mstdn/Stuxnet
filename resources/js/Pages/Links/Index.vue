@@ -26,8 +26,8 @@ function destroy(id) {
         <div class="hero py-10 md:py-16 dark:bg-base-300 bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Links</h1>
-                    <p class="py-6">Discover the projects I have done in the past or still working on.</p>
+                    <h1 class="text-5xl font-bold">Stuxlinks</h1>
+                    <p class="py-6">Links to my socials or website I host.</p>
                 </div>
             </div>
         </div>

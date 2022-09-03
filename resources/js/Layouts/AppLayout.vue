@@ -1,11 +1,9 @@
 <script setup>
-import { ref } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import JetBanner from '@/Components/Banner.vue';
 import Compose from '../Pages/Components/Compose.vue';
 import CreateCategory from '../Pages/Components/CreateCategory.vue';
-import SideNav from '../Pages/Components/SideNav.vue';
 import CreateBlog from '../Pages/Components/CreateBlog.vue';
 import Mobile from '../Pages/Components/Mobile.vue';
 import CreateLink from '../Pages/Components/CreateLink.vue';
@@ -13,7 +11,6 @@ import CreateLink from '../Pages/Components/CreateLink.vue';
 defineProps({
     title: String,
 });
-
 
 const logout = () => {
     Inertia.post(route('logout'));
@@ -26,8 +23,8 @@ const logout = () => {
 
         <JetBanner />
 
-        <div class="min-h-screen bg-base-100 dark:bg-base-200">
-            <nav class="navbar sticky top-0 z-50 bg-base-100 border-b-[1px] border-base-300 dark:bg-base-200">
+        <div class="min-h-screen bg-base-100">
+            <nav class="navbar sticky top-0 z-50 bg-base-100 border-b-[1px] border-base-300">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -98,8 +95,6 @@ const logout = () => {
                             </li>
                         </ul>
                     </div>
-
-                    <!--  <SideNav /> -->
 
                     <Link href="/" class="btn btn-ghost normal-case text-xl">Stuxnet</Link>
                 </div>
@@ -225,7 +220,7 @@ const logout = () => {
 
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-base-200 dark:bg-base-300">
+            <header v-if="$slots.header" class="bg-base-200">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>

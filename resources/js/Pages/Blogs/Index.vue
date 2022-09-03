@@ -46,10 +46,10 @@ function destroy(id) {
                 </h1>
             </template> -->
 
-        <div class="hero py-10 md:py-16 dark:bg-base-300 bg-base-200">
+        <div class="hero py-10 md:py-16 bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Blogs</h1>
+                    <h1 class="text-5xl font-bold">Stuxblogs</h1>
                     <p class="py-6">Quick reads for the mind.</p>
                 </div>
             </div>
@@ -64,7 +64,7 @@ function destroy(id) {
                     <div v-for="post in blogs.data" :key="post.id" class="card w-full max-w-[650px] mx-auto py-6">
                         <!-- <figure v-if="post.file !== '/storage/'"><img class=" w-ful h-max-[300px]" :src="post.file" />
                         </figure> -->
-                        <div class="card-body">
+                        <div class="card-body border-base-300 border-[1px]">
                             <h4 class="card-title">
                                 <InertiaLink :href="route('blog.post', { id: post.id })"
                                     class="btn-link">

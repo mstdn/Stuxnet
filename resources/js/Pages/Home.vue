@@ -20,6 +20,9 @@ let props = defineProps({
                             Stuxnet
                         </h1>
                         <p class="py-6 text-white">Base of operations.</p>
+                        <InertiaLink href="/blog" class="btn btn-primary">Blogs</InertiaLink>
+                        <InertiaLink href="/projects" class="btn btn-primary">Projects</InertiaLink>
+                        <InertiaLink href="/links" class="btn btn-primary">Links</InertiaLink>
                     </div>
                 </div>
             </div>
