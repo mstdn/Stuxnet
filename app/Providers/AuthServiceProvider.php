@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Policies\BlogPolicy;
 use App\Policies\CategoryPolicy;
 use App\Policies\PostPolicy;
 use App\Policies\ReplyPolicy;
@@ -21,11 +22,6 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
 
-    /**
-     * Register any authentication / authorization services.
-     *
-     * @return void
-     */
     public function boot()
     {
         $this->registerPolicies();
@@ -35,5 +31,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('delete-reply', [ReplyPolicy::class, 'destroy']);
         Gate::define('delete-category', [CategoryPolicy::class, 'destroy']);
         Gate::define('create-category', [CategoryPolicy::class, 'store']);
+        Gate::define('delete-blog', [BlogPolicy::class, 'destroy']);
+        Gate::define('create-blog', [BlogPolicy::class, 'store']);
     }
 }

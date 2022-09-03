@@ -40,10 +40,16 @@
                                 <div class="mt-2">
                                     <InertiaLink :href="route('projects.post', { id: post.id })">
                                         <img class="object-fill h-full w-full" :src="post.file" alt="" />
-                                    </InertiaLink>  
+                                    </InertiaLink>
                                 </div>
                                 <div class="mt-4">
                                     <p class="text-gray-900 text-center p-6">{{ post.description }}</p>
+                                </div>
+                                <div class="mt-2">
+                                    <button v-if="$page.props.stux === true" @click="destroy(post.id)"
+                                        class="btn btn-error btn-sm" method="post" type="submit">
+                                        Delete
+                                    </button>
                                 </div>
 
                             </DialogPanel>
@@ -57,6 +63,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useForm } from '@inertiajs/inertia-vue3';
 import {
     TransitionRoot,
     TransitionChild,
@@ -68,6 +75,13 @@ import {
 let props = defineProps({
     post: Object,
 });
+
+const form = useForm();
+function destroy(id) {
+    if (confirm("Are you sure you want to delete?")) {
+        form.delete(route('project.destroy', id));
+    }
+};
 
 const isOpen = ref(false)
 

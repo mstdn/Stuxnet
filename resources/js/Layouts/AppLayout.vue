@@ -5,6 +5,9 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import JetBanner from '@/Components/Banner.vue';
 import Compose from '../Pages/Components/Compose.vue';
 import CreateCategory from '../Pages/Components/CreateCategory.vue';
+import SideNav from '../Pages/Components/SideNav.vue';
+import CreateBlog from '../Pages/Components/CreateBlog.vue';
+import Mobile from '../Pages/Components/Mobile.vue';
 
 defineProps({
     title: String,
@@ -41,8 +44,8 @@ const logout = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
-                                About
+                                <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                                Blog
                                 </Link>
                             </li>
                             <li>
@@ -51,10 +54,15 @@ const logout = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                About
+                                </Link>
+                            </li>
+                            <!-- <li>
                                 <Link href="/contact" :class="{ 'btn-active text-white': $page.url === '/contact' }">
                                 Contact
                                 </Link>
-                            </li>
+                            </li> -->
                             <li tabindex="0">
                                 <a class="justify-between">
                                     More
@@ -83,6 +91,9 @@ const logout = () => {
                             </li>
                         </ul>
                     </div>
+
+                    <!--  <SideNav /> -->
+
                     <Link href="/" class="btn btn-ghost normal-case text-xl">Stuxnet</Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
@@ -93,8 +104,8 @@ const logout = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
-                            About
+                            <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                            Blog
                             </Link>
                         </li>
                         <li>
@@ -102,12 +113,19 @@ const logout = () => {
                             Projects
                             </Link>
                         </li>
+                        <li>
+                            <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                            About
+                            </Link>
+                        </li>
                         <li tabindex="0">
                             <a>
-                                More
-                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24">
-                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="1"></circle>
+                                    <circle cx="19" cy="12" r="1"></circle>
+                                    <circle cx="5" cy="12" r="1"></circle>
                                 </svg>
                             </a>
                             <ul class="p-2 bg-base-100">
@@ -138,6 +156,7 @@ const logout = () => {
                     </Link>
                 </div>
                 <div v-if="$page.props.auth.user !== null" class="navbar-end">
+                    <CreateBlog v-if="$page.props.stux === true" />
                     <Compose v-if="$page.props.stux === true" />
                     <CreateCategory v-if="$page.props.stux === true" />
 
@@ -152,7 +171,7 @@ const logout = () => {
                             <li>
                                 <a class="justify-between">
                                     Profile
-                                    <span class="badge">New</span>
+                                    <span class="badge">Soon</span>
                                 </a>
                             </li>
                             <li>
@@ -185,6 +204,8 @@ const logout = () => {
 
 
         </div>
+
+
 
         <footer class="footer footer-center p-10 bg-base-100 dark:bg-base-200 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
@@ -222,5 +243,7 @@ const logout = () => {
                 <p>© 2022. <a href="/">By @stux</a></p>
             </div>
         </footer>
+
+        <Mobile class="pt-20" />
     </div>
 </template>

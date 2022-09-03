@@ -15,18 +15,23 @@ function destroy(id) {
 </script>
 <template>
     <AppLayout title="Projects">
-
-        <!-- <div class="py-12">
-            <div class="max-w-7xl mx-auto px-4 lg:px-8">
-                <div class="overflow-hidden">
-
-                    <div class="columns-1 md:columns-3 lg:columns-4">
-
-                    </div>
-
-                </div>
+        <template #header>
+            <div class="text-sm breadcrumbs">
+                <ul>
+                    <li>
+                        <InertiaLink href="/">
+                            Home
+                        </InertiaLink>
+                    </li>
+                    <li>
+                        <InertiaLink href="/projects">
+                            Projects
+                        </InertiaLink>
+                    </li>
+                    <li>Here!</li>
+                </ul>
             </div>
-        </div> -->
+        </template>
 
         <section class="">
             <div

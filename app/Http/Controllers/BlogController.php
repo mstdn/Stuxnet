@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Blog;
+use Inertia\Inertia;
+use Illuminate\Http\Request;
+use App\Http\Resources\BlogResource;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Redirect;
+
+class BlogController extends Controller
+{
+    public function index(Request $request)
+    {
+        return Inertia::render('Blogs/Index', [
+            'blogs' =>  BlogResource::collection(
+                Blog::query()
+                    ->select('id', 'content', 'file', 'user_id', 'created_at')
+                    ->with('user')
+                    ->latest()
+                   /*  ->when($request->input('search'), function ($query, $search) {
+                        $query->where('description', 'like', "%{$search}%");
+                    }) */
+                    ->paginate(20)
+                    ->withQueryString()
+            ),
+            /* 'filters' => $request->only(['search']) */
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $blog = $request->validate([
+            'description'   =>  'required|min:1|max:500',
+            'file'          =>  ['nullable', 'mimes:jpg,jpeg,png,gif', 'max:500048']
+        ]);
+
+        $blog['user_id'] = auth()->id();
+
+        if ($request->hasFile('file')) {
+            $blog['file'] = $request->file('file')->store('uploads/' . $blog['user_id'] . '/' . '1', 'public');
+
+            $blog = Blog::create([
+                'user_id'       =>  auth()->id(),
+                'content'   =>  $request->description,
+                'file'          =>  $request->file->store('uploads/' . $blog['user_id'] . '/' . '1', 'public')
+            ]);
+        }
+
+        $blog = Blog::create([
+            'user_id'       =>  auth()->id(),
+            'content'   =>  $request->description,
+        ]);
+
+        return Redirect::route('blogs');
+    }
+
+    public function show(Blog $blog, Request $request)
+    {
+        return Inertia::render('Blogs/Show', [
+            'blog'  =>  BlogResource::make($blog),
+            'filters' => $request->only(['search'])
+        ]);
+    }
+
+    public function destroy(Blog $blog)
+    {
+        if (!Gate::allows('delete-blog', $blog)) {
+            abort(403);
+        }
+
+        if (File::exists('storage' . $blog->file)) {
+            File::delete('storage' . $blog->file);
+        }
+
+        $blog->delete();
+        return Redirect::route('blogs');
+    }
+}

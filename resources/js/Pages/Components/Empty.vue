@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="flex-none">
-                <InertiaLink :href="route('community')" class="btn btn-sm">Browse Community</InertiaLink>
+                <InertiaLink class="btn btn-sm">Browse Community</InertiaLink>
             </div>
         </div>
     </div>
