@@ -7,6 +7,7 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
@@ -23,6 +24,11 @@ Route::get('/photos', [PhotoController::class, 'index'])->name('photos');
 Route::get('/@{user:username}', [UserController::class, 'show'])->name('user-profile');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+    Route::post('/projects/{post:id}/reply', [ReplyController::class, 'PostReply'])->name('project.reply');
+    Route::delete('/replies/{reply}/delete', [ReplyController::class, 'destroy'])->name('reply.destroy');
+    Route::post('/blog/{blog}/reply', [ReplyController::class, 'BlogReply'])->name('blog.reply');
+    Route::post('/photos/{photo}/reply', [ReplyController::class, 'PhotoReply'])->name('photo.reply');
+
     Route::group(['middleware' => 'admin'], function () {
         Route::middleware('optimizeImages')->group(function () {
             Route::post('/projects', [PostController::class, 'store'])->name('project.store');

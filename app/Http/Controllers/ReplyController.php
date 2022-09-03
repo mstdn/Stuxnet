@@ -2,85 +2,55 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreReplyRequest;
-use App\Http\Requests\UpdateReplyRequest;
+use App\Models\Blog;
+use App\Models\Post;
+use App\Models\Photo;
 use App\Models\Reply;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ReplyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function PostReply(Request $request, Post $post)
     {
-        //
+        $reply = $request->validate([
+            'reply' => 'required|max:500|min:1'
+        ]);
+        $reply['user_id'] = auth()->id();
+        $reply['post_id'] = $request['post_id'];
+        $post->replies()->create($reply);
+        return back();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function BlogReply(Request $request, Blog $blog)
     {
-        //
+        $reply = $request->validate([
+            'reply' => 'required|max:500|min:1'
+        ]);
+        $reply['user_id'] = auth()->id();
+        $reply['blog_id'] = $request['blog_id'];
+        $blog->replies()->create($reply);
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreReplyRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreReplyRequest $request)
+    public function PhotoReply(Request $request, Photo $photo)
     {
-        //
+        $reply = $request->validate([
+            'reply' => 'required|max:500|min:1'
+        ]);
+        $reply['user_id'] = auth()->id();
+        $reply['photo_id'] = $request['photo_id'];
+        $photo->replies()->create($reply);
+        return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Reply $reply)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Reply $reply)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateReplyRequest  $request
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateReplyRequest $request, Reply $reply)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Reply $reply)
     {
-        //
+        if (!Gate::allows('delete-reply', $reply)) {
+            abort(403);
+        }
+        $reply->delete();
+
+        return back();
     }
 }

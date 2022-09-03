@@ -20,13 +20,15 @@
                                 <DialogTitle as="h3"
                                     class="flex justify-between text-sm font-medium leading-6 text-gray-900">
                                     <div class="flex justify-start">
-                                        <img class="inline-block h-9 w-9 mask mask-hexagon" :src="post.user.avatar" alt="" />
+                                        <img class="inline-block h-9 w-9 mask mask-hexagon" :src="post.user.avatar"
+                                            alt="" />
                                         <InertiaLink class="ml-2 mt-1"
                                             :href="route('user-profile', { id: post.user.username })">
                                             @{{ post.user.username }}
                                         </InertiaLink>
-                                        <div class="m-1">・</div>
-                                        {{ post.time }}
+                                        <div class="m-1">・
+                                            {{ post.time }}
+                                        </div>
                                     </div>
 
                                     <div class="flex justify-end">
@@ -39,7 +41,7 @@
                                     <img class="object-fill h-full w-full" :src="post.photo" alt="" />
                                 </div>
                                 <div class="mt-4">
-                                    <p class="text-gray-900 text-center p-6">{{ post.description }}</p>
+                                    <h2 class="text-gray-900 text-center p-6 text-xl">{{ post.name }}</h2>
                                 </div>
                                 <div class="mt-2 flex justify-end">
 

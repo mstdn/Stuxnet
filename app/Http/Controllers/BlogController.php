@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\BlogResource;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
+use App\Http\Resources\ReplyResource;
 use Illuminate\Support\Facades\Redirect;
 
 class BlogController extends Controller
@@ -47,6 +48,8 @@ class BlogController extends Controller
                 'content'   =>  $request->description,
                 'file'          =>  $request->file->store('uploads/' . $blog['user_id'] . '/' . '1', 'public')
             ]);
+
+            return Redirect::route('blogs');
         }
 
         $blog = Blog::create([
@@ -57,11 +60,16 @@ class BlogController extends Controller
         return Redirect::route('blogs');
     }
 
-    public function show(Blog $blog, Request $request)
+    public function show(Blog $blog)
     {
         return Inertia::render('Blogs/Show', [
             'blog'  =>  BlogResource::make($blog),
-            'filters' => $request->only(['search'])
+            'replies'   =>  ReplyResource::collection(
+                $blog->replies()
+                ->with('user')
+                ->oldest()
+                ->paginate(15)
+                )
         ]);
     }
 

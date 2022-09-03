@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ReplyResource extends JsonResource
@@ -15,7 +16,10 @@ class ReplyResource extends JsonResource
             'avatar'    =>  $this->user->getProfilePhotoUrlAttribute(),
             'username'  =>  $this->user->username,
             'user_id'   =>  $this->user->id,
-            'name'      =>  $this->user->name
+            'name'      =>  $this->user->name,
+            'can'       =>  [
+                'delete'      =>  Auth::user() ? Auth::user()->can('delete-reply', $this->resource) : null,
+            ]
         ];
     }
 }

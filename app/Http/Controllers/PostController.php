@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Resources\PostResource;
+use App\Http\Resources\ReplyResource;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Redirect;
@@ -28,8 +29,6 @@ class PostController extends Controller
                     ->paginate(20)
                     ->withQueryString()
             ),
-            
-            'filters' => $request->only(['search']),
         ]);
     }
 
@@ -75,11 +74,16 @@ class PostController extends Controller
         return Redirect::route('projects');
     }
 
-    public function show(Post $post, Request $request)
+    public function show(Post $post)
     {
         return Inertia::render('Posts/Show', [
-            'post'  =>  PostResource::make($post),
-            'filters' => $request->only(['search'])
+            'post'      =>  PostResource::make($post),
+            'replies'   =>  ReplyResource::collection(
+                $post->replies()
+                ->with('user')
+                ->oldest()
+                ->paginate(15)
+                )
         ]);
     }
 

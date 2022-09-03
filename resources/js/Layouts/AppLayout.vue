@@ -48,7 +48,7 @@ const logout = () => {
                             </li>
                             <li>
                                 <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
-                                Projects
+                                Work
                                 </Link>
                             </li>
                             <li>
@@ -117,7 +117,7 @@ const logout = () => {
                         </li>
                         <li>
                             <Link preserve-scroll href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
-                            Projects
+                            Work
                             </Link>
                         </li>
                         <li>
@@ -249,7 +249,7 @@ const logout = () => {
 
 
 
-        <footer class="footer footer-center p-10 bg-base-100 dark:bg-base-200 text-base-content rounded">
+        <footer class="footer footer-center p-10 bg-base-100 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
                 <InertiaLink href="/about" preserve-scroll class="link link-hover">About</InertiaLink>
                 <InertiaLink href="/projects" preserve-scroll class="link link-hover">Projects</InertiaLink>
