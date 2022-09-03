@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center py-6">
         <div>
             <slot name="logo" />
         </div>

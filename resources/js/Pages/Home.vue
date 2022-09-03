@@ -2,9 +2,11 @@
 import Empty from './Components/Empty.vue';
 import PostCard from './Components/PostCard.vue';
 import SimplePagination from './Components/SimplePagination.vue';
+import PhotoCard from './Components/PhotoCard.vue';
 
 let props = defineProps({
     posts: Object,
+    photos: Object,
 });
 
 </script>
@@ -21,15 +23,15 @@ let props = defineProps({
                         </h1>
                         <p class="py-6 text-white">Base of operations.</p>
                         <InertiaLink href="/blog" class="btn btn-primary">Blogs</InertiaLink>
-                        <InertiaLink href="/projects" class="btn btn-primary">Projects</InertiaLink>
+                        <InertiaLink href="/photos" class="btn btn-primary">Photos</InertiaLink>
+                        <InertiaLink href="/projects" class="btn btn-primary">Work</InertiaLink>
                         <InertiaLink href="/links" class="btn btn-primary">Links</InertiaLink>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section class="dark:bg-base-300">
+        <section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div class="max-w-screen-md mb-8 lg:mb-16">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
@@ -137,7 +139,7 @@ let props = defineProps({
         </section>
 
 
-        <section class="dark:bg-base-300">
+        <section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                 <InertiaLink href="/projects"
                     class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200"
@@ -160,9 +162,7 @@ let props = defineProps({
                 </p>
             </div>
         </section>
-
-
-        <section class="pt-4 pb-16 dark:bg-base-300">
+        <section class="pt-4 pb-16">
             <div class="max-w-7xl mx-auto px-4 lg:px-8">
                 <div class="overflow-hidden">
 
@@ -178,6 +178,36 @@ let props = defineProps({
                 </div>
             </div>
         </section>
+
+        <section>
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+                <h1
+                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+                    Browse Photos
+                </h1>
+                <p class="mb-8 text-lg font-normal text-gray-800 lg:text-xl sm:px-16 xl:px-48">
+                    Free open source photos made with a Canon EOS2000D.
+                </p>
+            </div>
+        </section>
+        <section class="pt-4 pb-16">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8">
+                <div class="overflow-hidden">
+
+                    <Empty v-if="photos.meta.total === 0" class="columns-1 mt-20" />
+
+                    <div class="columns-1 md:columns-3 lg:columns-4">
+                        <PhotoCard class="mb-4" v-for="post in photos.data" :key="post.id" :post="post" />
+                    </div>
+
+                    <div class="columns-1 md:columns-1 lg:columns-1 mt-6">
+                        <SimplePagination v-if="photos.meta.total >= 21" :data="photos.links" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
     </AppLayout>
 </template>

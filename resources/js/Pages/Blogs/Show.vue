@@ -86,7 +86,7 @@ function destroy(id) {
                                         replied</div>
                                 </div>
                                 <div
-                                    class="p-3 text-xs italic font-normal text-gray-900 bg-base-100 border border-gray-900">
+                                    class="p-3 text-xs italic font-normal text-gray-900 bg-white border border-gray-900">
                                     {{ reply.reply }}
                                 </div>
                             </div>
