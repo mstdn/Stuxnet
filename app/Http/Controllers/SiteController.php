@@ -18,13 +18,13 @@ class SiteController extends Controller
                 Post::query()
                 ->select('id', 'title', 'description', 'file', 'created_at', 'category_id', 'user_id', 'file2', 'file3')
                 ->with('user', 'category')
-                ->paginate(8)
+                ->paginate(15)
             ),
             'photos'    =>  PhotoResource::collection(
                 Photo::query()
                 ->select('id', 'name', 'photo', 'created_at', 'user_id')
                 ->with('user', 'category')
-                ->paginate(8)
+                ->paginate(16)
             )
         ]);
     }
