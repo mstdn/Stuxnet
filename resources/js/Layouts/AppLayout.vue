@@ -106,27 +106,27 @@ const logout = () => {
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         <li>
-                            <Link preserve-scroll href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
+                            <Link href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
                             Home
                             </Link>
                         </li>
                         <li>
-                            <Link preserve-scroll href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                            <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
                             Blog
                             </Link>
                         </li>
                         <li>
-                            <Link preserve-scroll href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
+                            <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
                             Work
                             </Link>
                         </li>
                         <li>
-                            <Link preserve-scroll href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                            <Link  href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
                             Photos
                             </Link>
                         </li>
                         <li>
-                            <Link preserve-scroll href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                            <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
                             Links
                             </Link>
                         </li>
@@ -142,18 +142,18 @@ const logout = () => {
                             </a>
                             <ul class="p-2 bg-base-100">
                                 <li>
-                                    <Link preserve-scroll href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                    <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
                                     About
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link preserve-scroll href="/privacy-policy"
+                                    <Link href="/privacy-policy"
                                         :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
                                     Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link preserve-scroll href="/terms-of-service"
+                                    <Link href="/terms-of-service"
                                         :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
                                     Terms of Service
                                     </Link>
