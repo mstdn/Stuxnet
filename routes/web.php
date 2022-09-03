@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
@@ -18,7 +19,7 @@ Route::get('/projects/categories', [CategoryController::class, 'index'])->name('
 Route::get('/projects/{category:slug}', [CategoryController::class, 'show'])->name('projects.category');
 Route::get('/project/{post:id}', [PostController::class, 'show'])->name('projects.post');
 Route::get('/links', [LinkController::class, 'index'])->name('links');
-
+Route::get('/photos', [PhotoController::class, 'index'])->name('photos');
 Route::get('/@{user:username}', [UserController::class, 'show'])->name('user-profile');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
@@ -26,6 +27,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::middleware('optimizeImages')->group(function () {
             Route::post('/projects', [PostController::class, 'store'])->name('project.store');
             Route::post('/blogs', [BlogController::class, 'store'])->name('blog.store');
+            Route::post('/photos', [PhotoController::class, 'store'])->name('photo.store');
         });
         Route::delete('/project/{post:id}/delete', [PostController::class, 'destroy'])->name('project.destroy');
         Route::delete('/blog/{blog}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
@@ -33,5 +35,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::delete('/projects/{categeory:slug}/delete', [CategoryController::class, 'destory'])->name('category.destroy');
         Route::post('/links', [LinkController::class, 'store'])->name('link.store');
         Route::delete('/links/{link}/delete', [LinkController::class, 'destroy'])->name('link.destroy');
+        Route::delete('/photos/{photo}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
     });
 });

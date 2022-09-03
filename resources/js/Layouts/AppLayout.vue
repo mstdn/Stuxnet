@@ -7,6 +7,7 @@ import CreateCategory from '../Pages/Components/CreateCategory.vue';
 import CreateBlog from '../Pages/Components/CreateBlog.vue';
 import Mobile from '../Pages/Components/Mobile.vue';
 import CreateLink from '../Pages/Components/CreateLink.vue';
+import CreatePhoto from '../Pages/Components/CreatePhoto.vue';
 
 defineProps({
     title: String,
@@ -184,6 +185,9 @@ const logout = () => {
                             </li>
                             <li>
                                 <CreateCategory v-if="$page.props.stux === true" />
+                            </li>
+                            <li>
+                                <CreatePhoto v-if="$page.props.stux === true" />
                             </li>
                         </ul>
                     </div>

@@ -23,4 +23,9 @@ class Reply extends Model
     {
         return $this->belongsTo(Blog::class);
     }
+
+    public function photo() 
+    {
+        return $this->belongsTo(Photo::class);
+    }
 }

@@ -59,7 +59,7 @@ class CategoryController extends Controller
             'slug'  =>  $request['slug']
         ]);
 
-        return Redirect::route('projects.categories');
+        return Redirect::route('projects');
     }
 
     public function destroy(Category $category)
@@ -69,6 +69,6 @@ class CategoryController extends Controller
         }
         
         $category->delete();
-        return Redirect::route('projects.categories');
+        return Redirect::route('projects');
     }
 }
