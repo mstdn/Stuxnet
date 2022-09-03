@@ -106,7 +106,7 @@ function destroy(id) {
                     </div>
 
                     <div class="columns-1 md:columns-1 lg:columns-1 mt-6">
-                        <SimplePagination v-if="blogs.meta.total >= 21" :data="blogs.links" />
+                        <SimplePagination v-if="blogs.meta.total >= 11" :data="blogs.links" />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 <script setup>
 import { useForm } from '@inertiajs/inertia-vue3';
 import PostReply from '../Components/PostReply.vue';
+import SimplePagination from '../Components/SimplePagination.vue';
+import NoReplies from '../Components/NoReplies.vue';
 
 let props = defineProps({
     post: Object,
@@ -78,11 +80,20 @@ function destroy(id) {
                 </div>
             </div>
         </section>
+
         <div class="divider"></div>
+
+        <div class="mx-auto max-w-screen-md w-full pt-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">
+                {{ post.data.replycount }} Replies
+            </h1>
+        </div>
+
         <section>
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-md lg:grid lg:grid-cols-1 lg:py-16 lg:px-6">
                 <div class="grid grid-cols-1 mt-8">
 
+                    <NoReplies class="pb-10" v-if="replies.meta.total === 0" />
 
                     <ol class="relative border-l border-base-300">
                         <li v-for="reply in replies.data" :key="reply.id" class="mb-10 ml-6">
@@ -109,6 +120,8 @@ function destroy(id) {
                             </div>
                         </li>
                     </ol>
+
+                    <SimplePagination  v-if="replies.meta.total >= 21" :data="replies.links" />
 
                     <PostReply v-if="$page.props.auth.user !== null" :post="post" />
                 </div>

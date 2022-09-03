@@ -29,6 +29,7 @@ class PostResource extends JsonResource
             'avatar'        =>  $this->user->getProfilePhotoUrlAttribute(),
             'username'      =>  $this->user->username,
             'name'          =>  $this->user->name,
+            'replycount'    =>  $this->replies->count(),
             'replies'       =>  ReplyResource::collection($this->whenLoaded('replies')),
             'can'           => [
                 'delete'    =>  Auth::user() ? Auth::user()->can('delete-post', $this->resource) : null,

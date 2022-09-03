@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class BlogController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return Inertia::render('Blogs/Index', [
             'blogs' =>  BlogResource::collection(
@@ -21,13 +21,9 @@ class BlogController extends Controller
                     ->select('id', 'content', 'file', 'user_id', 'created_at')
                     ->with('user', 'replies')
                     ->latest()
-                   /*  ->when($request->input('search'), function ($query, $search) {
-                        $query->where('description', 'like', "%{$search}%");
-                    }) */
-                    ->paginate(20)
+                    ->paginate(10)
                     ->withQueryString()
             ),
-            /* 'filters' => $request->only(['search']) */
         ]);
     }
 
@@ -63,13 +59,13 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return Inertia::render('Blogs/Show', [
-            'blog'  =>  BlogResource::make($blog),
-            'replies'   =>  ReplyResource::collection(
+            'blog'          =>  BlogResource::make($blog),
+            'replies'       =>  ReplyResource::collection(
                 $blog->replies()
                 ->with('user')
                 ->oldest()
                 ->paginate(15)
-                )
+            )
         ]);
     }
 

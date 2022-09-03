@@ -2,6 +2,7 @@
 import { useForm } from '@inertiajs/inertia-vue3';
 import PostReply from '../Components/PostReply.vue';
 import BlogReply from '../Components/BlogReply.vue';
+import NoReplies from '../Components/NoReplies.vue';
 
 let props = defineProps({
     blog: Object,
@@ -37,7 +38,7 @@ function destroy(id) {
 
         <section v-if="blog.data.file !== '/storage/'">
             <div
-                class="gap-8 items-center py-10 px-4 max-w-[650px] mx-auto xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
+                class="gap-8 items-center py-10 px-4 max-w-screen-md mx-auto xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
                 <div class="border-base-300 border-[1px] bg-gray-100">
                     <img class="w-full" :src="blog.data.file" alt="">
                     <div class="p-4 mt-4">
@@ -52,7 +53,7 @@ function destroy(id) {
 
         <section v-if="blog.data.file === '/storage/'">
             <div
-                class="gap-8 items-center py-10 px-4 mx-auto max-w-[650px] xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
+                class="gap-16 items-center py-10 px-4 mx-auto max-w-screen-md xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
                 <div class="mt-4 border-base-300 border-[1px] bg-gray-100">
                     <p class="p-6 font-light text-gray-800 md:text-lg">
                         {{ blog.data.description }}
@@ -62,10 +63,20 @@ function destroy(id) {
         </section>
 
         <div class="divider"></div>
+        
+        <div class="mx-auto max-w-screen-md w-full pt-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">
+                {{ blog.data.replycount }} Replies
+            </h1>
+        </div>
+
         <section>
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-md lg:grid lg:grid-cols-1 lg:py-16 lg:px-6">
                 <div class="grid grid-cols-1 mt-8">
 
+
+
+                    <NoReplies class="pb-10" v-if="replies.meta.total === 0" />
 
                     <ol class="relative border-l border-base-300">
                         <li v-for="reply in replies.data" :key="reply.id" class="mb-10 ml-6">

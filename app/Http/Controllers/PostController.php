@@ -77,13 +77,13 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return Inertia::render('Posts/Show', [
-            'post'      =>  PostResource::make($post),
-            'replies'   =>  ReplyResource::collection(
+            'post'          =>  PostResource::make($post),
+            'replies'       =>  ReplyResource::collection(
                 $post->replies()
                 ->with('user')
                 ->oldest()
                 ->paginate(15)
-                )
+            )
         ]);
     }
 
