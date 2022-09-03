@@ -19,12 +19,12 @@ function destroy(id) {
             <div class="text-sm breadcrumbs">
                 <ul>
                     <li>
-                        <InertiaLink href="/">
+                        <InertiaLink preserve-scroll href="/">
                             Home
                         </InertiaLink>
                     </li>
                     <li>
-                        <InertiaLink href="/projects">
+                        <InertiaLink preserve-scroll href="/projects">
                             Projects
                         </InertiaLink>
                     </li>

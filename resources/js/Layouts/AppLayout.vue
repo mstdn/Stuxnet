@@ -18,7 +18,6 @@ const logout = () => {
 </script>
 <template>
     <div>
-
         <Head :title="title" />
 
         <JetBanner />
@@ -101,22 +100,22 @@ const logout = () => {
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         <li>
-                            <Link href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
+                            <Link preserve-scroll href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
                             Home
                             </Link>
                         </li>
                         <li>
-                            <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                            <Link preserve-scroll href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
                             Blog
                             </Link>
                         </li>
                         <li>
-                            <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
+                            <Link preserve-scroll href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
                             Projects
                             </Link>
                         </li>
                         <li>
-                            <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                            <Link preserve-scroll href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
                             Links
                             </Link>
                         </li>
@@ -132,18 +131,18 @@ const logout = () => {
                             </a>
                             <ul class="p-2 bg-base-100">
                                 <li>
-                                    <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                    <Link preserve-scroll href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
                                     About
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/privacy-policy"
+                                    <Link preserve-scroll href="/privacy-policy"
                                         :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
                                     Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/terms-of-service"
+                                    <Link preserve-scroll href="/terms-of-service"
                                         :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
                                     Terms of Service
                                     </Link>

@@ -7,19 +7,18 @@
 
         <title inertia>{{ config('app.name', 'Stuxnet') }}</title>
 
-        <meta property="og:site_name" content="{{ config('app.name', 'LifeDash') }}">
-        <meta property="og:title" content="{{ config('app.name', 'LifeDash') }}">
+        <meta property="og:site_name" content="{{ config('app.name', 'Stuxnet') }}">
+        <meta property="og:title" content="{{ config('app.name', 'Stuxnet') }}">
         <meta property="og:type" content="article">
         <meta property="og:url" content="{{request()->url()}}">
-
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Open+Sans:wght@400;600;700&display=swap">
-
+        <meta head-key="description" name="description" content="A personal information website about @stux." />
+        
         @laravelPWA
         @routes
         @vite('resources/js/app.js')
         @inertiaHead
     </head>
-    <body class="font-sans bg-base-100 dark:bg-base-200">
+    <body class="bg-base-100 dark:bg-base-200">
         @inertia
     </body>
 </html>

@@ -18,12 +18,12 @@ function destroy(id) {
             <div class="text-sm breadcrumbs">
                 <ul>
                     <li>
-                        <InertiaLink href="/">
+                        <InertiaLink preserve-scroll href="/">
                             Home
                         </InertiaLink>
                     </li>
                     <li>
-                        <InertiaLink href="/blog">
+                        <InertiaLink preserve-scroll href="/blog">
                             Blog
                         </InertiaLink>
                     </li>
@@ -34,21 +34,24 @@ function destroy(id) {
 
         <section v-if="blog.data.file !== '/storage/'">
             <div
-                class="gap-8 items-center py-10 px-4 max-w-[1200px] mx-auto xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
-                <img class="w-full" :src="blog.data.file" alt="">
-                <div class="mt-4">
-                    <p class="mb-6 font-light text-gray-800 md:text-lg">
-                        {{ blog.data.description }}
-                    </p>
+                class="gap-8 items-center py-10 px-4 max-w-[650px] mx-auto xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
+                <div class="border-base-300 border-[1px] bg-gray-100">
+                    <img class="w-full" :src="blog.data.file" alt="">
+                    <div class="p-4 mt-4">
+                        <p class="mb-6 font-light text-gray-800 md:text-lg">
+                            {{ blog.data.description }}
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <section v-if="blog.data.file === '/storage/'">
             <div
                 class="gap-8 items-center py-10 px-4 mx-auto max-w-[650px] xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
-                <div class="mt-4 md:mt-0">
-                    <p class="mb-6 font-light text-gray-800 md:text-lg">
+                <div class="mt-4 border-base-300 border-[1px] bg-gray-100">
+                    <p class="p-6 font-light text-gray-800 md:text-lg">
                         {{ blog.data.description }}
                     </p>
                 </div>
