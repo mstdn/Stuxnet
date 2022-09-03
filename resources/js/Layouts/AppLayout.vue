@@ -52,6 +52,11 @@ const logout = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                                Photos
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
                                 Links
                                 </Link>
@@ -113,6 +118,11 @@ const logout = () => {
                         <li>
                             <Link preserve-scroll href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
                             Projects
+                            </Link>
+                        </li>
+                        <li>
+                            <Link preserve-scroll href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                            Photos
                             </Link>
                         </li>
                         <li>
