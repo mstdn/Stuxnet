@@ -66,15 +66,35 @@ function destroy(id) {
                         </figure> -->
                         <div class="card-body border-base-300 border-[1px] bg-gray-100">
                             <h4 class="card-title">
-                                <InertiaLink :href="route('blog.post', { id: post.id })"
-                                    class="btn-link">
-                                    {{ post.time }}
-                                </InertiaLink>
+                                <div class="flex justify-between w-full">
+                                    <div class="flex justify-start">
+                                        <InertiaLink :href="route('blog.post', { id: post.id })" class="btn-link">
+                                            {{ post.time }}
+                                        </InertiaLink>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <InertiaLink :href="route('blog.post', { id: post.id })" class="btn-link">
+                                            <div class="badge badge-outline">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                                    </path>
+                                                </svg>
+                                                <div class="ml-2">
+                                                    {{ post.replycount }}
+                                                </div>
+                                            </div>
+                                        </InertiaLink>
+                                    </div>
+                                </div>
+
                             </h4>
                             <p class="my-2">{{ post.description }}</p>
                             <div class="card-actions justify-end">
-                                <button v-if="$page.props.stux === true" @click="destroy(post.id)" class="btn btn-error btn-sm"
-                                    method="post" type="submit">
+                                <button v-if="$page.props.stux === true" @click="destroy(post.id)"
+                                    class="btn btn-error btn-sm" method="post" type="submit">
                                     Delete
                                 </button>
                                 <InertiaLink :href="route('blog.post', { id: post.id })"

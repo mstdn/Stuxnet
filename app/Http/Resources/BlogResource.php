@@ -15,6 +15,7 @@ class BlogResource extends JsonResource
             'file'          =>  '/storage/' . $this->file,
             'avatar'        =>  $this->user->getProfilePhotoUrlAttribute(),
             'username'      =>  $this->user->username,
+            'replycount'    =>  $this->replies->count()
         ];
     }
 }

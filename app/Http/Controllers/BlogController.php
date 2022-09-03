@@ -19,7 +19,7 @@ class BlogController extends Controller
             'blogs' =>  BlogResource::collection(
                 Blog::query()
                     ->select('id', 'content', 'file', 'user_id', 'created_at')
-                    ->with('user')
+                    ->with('user', 'replies')
                     ->latest()
                    /*  ->when($request->input('search'), function ($query, $search) {
                         $query->where('description', 'like', "%{$search}%");
