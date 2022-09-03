@@ -10,7 +10,7 @@
                     <div class="fixed inset-0 bg-black bg-opacity-25" />
                 </TransitionChild>
 
-                <div class="fixed inset-0 overflow-y-auto">
+                <div class="fixed inset-0 overflow-y-auto z-50">
                     <div class="flex min-h-full items-center justify-center p-4 text-center">
                         <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
                             enter-to="opacity-100 scale-100" leave="duration-200 ease-in"
@@ -45,7 +45,10 @@
                                 <div class="mt-4">
                                     <p class="text-gray-900 text-center p-6">{{ post.description }}</p>
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-2 flex justify-end">
+                                    <InertiaLink class="btn btn-primary btn-sm" :href="route('projects.post', { id: post.id })">
+                                    Read more
+                                    </InertiaLink>
                                     <button v-if="$page.props.stux === true" @click="destroy(post.id)"
                                         class="btn btn-error btn-sm" method="post" type="submit">
                                         Delete

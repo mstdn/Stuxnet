@@ -8,6 +8,7 @@ import CreateCategory from '../Pages/Components/CreateCategory.vue';
 import SideNav from '../Pages/Components/SideNav.vue';
 import CreateBlog from '../Pages/Components/CreateBlog.vue';
 import Mobile from '../Pages/Components/Mobile.vue';
+import CreateLink from '../Pages/Components/CreateLink.vue';
 
 defineProps({
     title: String,
@@ -54,8 +55,8 @@ const logout = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
-                                About
+                                <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                                Links
                                 </Link>
                             </li>
                             <!-- <li>
@@ -72,6 +73,12 @@ const logout = () => {
                                     </svg>
                                 </a>
                                 <ul class="p-2 bg-base-100">
+                                    <li>
+                                        <Link href="/about"
+                                            :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                        About
+                                        </Link>
+                                    </li>
                                     <li>
                                         <Link href="/privacy-policy"
                                             :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
@@ -114,8 +121,8 @@ const logout = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
-                            About
+                            <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                            Links
                             </Link>
                         </li>
                         <li tabindex="0">
@@ -129,6 +136,11 @@ const logout = () => {
                                 </svg>
                             </a>
                             <ul class="p-2 bg-base-100">
+                                <li>
+                                    <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                    About
+                                    </Link>
+                                </li>
                                 <li>
                                     <Link href="/privacy-policy"
                                         :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
@@ -156,13 +168,35 @@ const logout = () => {
                     </Link>
                 </div>
                 <div v-if="$page.props.auth.user !== null" class="navbar-end">
-                    <CreateBlog v-if="$page.props.stux === true" />
-                    <Compose v-if="$page.props.stux === true" />
-                    <CreateCategory v-if="$page.props.stux === true" />
+
+                    <div v-if="$page.props.stux === true" class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn m-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                            </svg>
+                        </label>
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li>
+                                <CreateLink v-if="$page.props.stux === true" />
+                            </li>
+                            <li>
+                                <CreateBlog v-if="$page.props.stux === true" />
+                            </li>
+                            <li>
+                                <Compose v-if="$page.props.stux === true" />
+                            </li>
+                            <li>
+                                <CreateCategory v-if="$page.props.stux === true" />
+                            </li>
+                        </ul>
+                    </div>
 
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                            <div class="w-10 mask mask-hexagon">
+                            <div class="w-12 mask mask-hexagon">
                                 <img :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
                             </div>
                         </label>

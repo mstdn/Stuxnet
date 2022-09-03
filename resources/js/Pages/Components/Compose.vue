@@ -1,9 +1,10 @@
 <template>
-    <button type="button" @click="openModal" class="btn btn-circle btn-ghost md:mr-2">
+    <button type="button" @click="openModal" class="btn-link gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3" />
         </svg>
+         Project
     </button>
 
     <TransitionRoot appear :show="isOpen" as="template">
@@ -22,7 +23,7 @@
                             class="w-full max-w-md transform overflow-hidden rounded-md bg-white text-gray-900 p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
                                 <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-gray-900">
-                                    Upload a post
+                                    New project
                                 </div>
                                 <div class="flex justify-end text-sm text-gray-900">
                                     {{ characterCount }}/500

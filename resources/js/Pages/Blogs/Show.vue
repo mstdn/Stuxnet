@@ -34,9 +34,9 @@ function destroy(id) {
 
         <section v-if="blog.data.file !== '/storage/'">
             <div
-                class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
+                class="gap-8 items-center py-10 px-4 max-w-[1200px] mx-auto xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
                 <img class="w-full" :src="blog.data.file" alt="">
-                <div class="mt-4 md:mt-0">
+                <div class="mt-4">
                     <p class="mb-6 font-light text-gray-800 md:text-lg">
                         {{ blog.data.description }}
                     </p>
@@ -46,7 +46,7 @@ function destroy(id) {
 
         <section v-if="blog.data.file === '/storage/'">
             <div
-                class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
+                class="gap-8 items-center py-10 px-4 mx-auto max-w-[650px] xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
                 <div class="mt-4 md:mt-0">
                     <p class="mb-6 font-light text-gray-800 md:text-lg">
                         {{ blog.data.description }}

@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Policies\BlogPolicy;
 use App\Policies\CategoryPolicy;
+use App\Policies\LinkPolicy;
 use App\Policies\PostPolicy;
 use App\Policies\ReplyPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -33,5 +34,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('create-category', [CategoryPolicy::class, 'store']);
         Gate::define('delete-blog', [BlogPolicy::class, 'destroy']);
         Gate::define('create-blog', [BlogPolicy::class, 'store']);
+        Gate::define('create-link', [LinkPolicy::class, 'store']);
+        Gate::define('delete-link', [LinkPolicy::class, 'destroy']);
     }
 }
