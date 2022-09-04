@@ -300,7 +300,7 @@ const logout = () => {
                 </div>
             </div>
             <div>
-                <p>© 2022. <a href="/">By @stux</a></p>
+                <p>© 2022. <a href="https://stux.info" target="_blank">@stux</a> · <a href="https://github.com/mstdn/Stuxnet" target="_blank">Source</a></p>
             </div>
         </footer>
 
