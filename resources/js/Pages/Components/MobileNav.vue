@@ -9,8 +9,8 @@
     
     const classes = computed(() => {
         return props.active
-            ? 'text-error active'
-            : 'text-error';
+            ? 'text-primary active'
+            : 'text-primary';
     });
     </script>
     

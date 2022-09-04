@@ -7,7 +7,6 @@ use App\Http\Resources\PostResource;
 use App\Models\Photo;
 use App\Models\Post;
 use Inertia\Inertia;
-use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
@@ -17,13 +16,13 @@ class SiteController extends Controller
             'posts'     =>  PostResource::collection(
                 Post::query()
                 ->select('id', 'title', 'description', 'file', 'created_at', 'category_id', 'user_id', 'file2', 'file3')
-                ->with('user', 'category')
+                ->with('user', 'category', 'replies')
                 ->paginate(15)
             ),
             'photos'    =>  PhotoResource::collection(
                 Photo::query()
                 ->select('id', 'name', 'photo', 'created_at', 'user_id')
-                ->with('user', 'category')
+                ->with('user', 'category', 'replies')
                 ->paginate(16)
             )
         ]);

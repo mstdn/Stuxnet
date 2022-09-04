@@ -39,10 +39,23 @@ function destroy(id) {
         <section class="">
             <div
                 class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
-                <img class="w-full" :src="post.data.file" alt="dashboard image">
-                <!-- <img class="w-full hidden dark:block"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
-                    alt="dashboard image"> -->
+
+               
+
+                <label for="Image1" class="modal-button">
+                    <img class="w-full" :src="post.data.file" alt="">
+                </label>
+                <input type="checkbox" id="Image1" class="modal-toggle" />
+                <div class="modal">
+                    <div class="modal-box w-11/12 max-w-5xl">
+                        <label for="Image1" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <img class="w-full h-full mt-6" :src="post.data.file" alt="">
+                        <div class="modal-action">
+                            <label for="Image1" class="btn">Close</label>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="mt-4 md:mt-0">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
                         {{ post.data.title }}
@@ -75,8 +88,39 @@ function destroy(id) {
                     </p>
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img class="w-full rounded-lg" :src="post.data.file2" alt="office content 1">
-                    <img class="mt-4 w-full lg:mt-10 rounded-lg" :src="post.data.file3" alt="office content 2">
+                    <div>
+                        <label for="Image3" class="modal-button">
+                            <img class="w-full" :src="post.data.file2" alt="">
+                        </label>
+                        <input type="checkbox" id="Image3" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box w-11/12 max-w-5xl">
+                                <label for="Image3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                <img class="w-full h-full mt-6" :src="post.data.file2" alt="">
+                                <div class="modal-action">
+                                    <label for="Image3" class="btn">Close</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="Image4" class="modal-button">
+                            <img class="mt-4 w-full lg:mt-10" :src="post.data.file3" alt="">
+                        </label>
+                        <input type="checkbox" id="Image4" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box w-11/12 max-w-5xl">
+                                <label for="Image4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                <img class="w-full h-full mt-6" :src="post.data.file3" alt="">
+                                <div class="modal-action">
+                                    <label for="Image4" class="btn">Close</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <img class="mt-4 w-full lg:mt-10 rounded-lg" :src="post.data.file3" alt=""> -->
+
                 </div>
             </div>
         </section>
@@ -121,7 +165,7 @@ function destroy(id) {
                         </li>
                     </ol>
 
-                    <SimplePagination  v-if="replies.meta.total >= 21" :data="replies.links" />
+                    <SimplePagination v-if="replies.meta.total >= 21" :data="replies.links" />
 
                     <PostReply v-if="$page.props.auth.user !== null" :post="post" />
                 </div>
