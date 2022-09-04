@@ -2,7 +2,7 @@
 
 Meow there! This is Stuxnet, my self-created CMS-ish for my website [stux.info](https://stux.info)
 
-A live demo can be found on [Gram.Social](https://gram.social).
+A live demo can be found on [here](https://stux.info).
 
 - [Laravel 9.x](https://laravel.com/).
 - [Vue JS 3.x](https://vuejs.org/).
