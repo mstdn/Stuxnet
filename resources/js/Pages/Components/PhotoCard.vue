@@ -48,7 +48,9 @@
                                     <h2 class="text-gray-900 text-center p-6 text-xl">{{ post.name }}</h2>
                                 </div>
                                 <div class="mt-2 flex justify-end">
-
+                                    <InertiaLink class="btn btn-primary btn-sm" :href="route('photo.show', { id: post.id })">
+                                        See photo
+                                    </InertiaLink>
                                     <button v-if="$page.props.stux === true" @click="destroy(post.id)"
                                         class="btn btn-error btn-sm" method="post" type="submit">
                                         Delete
