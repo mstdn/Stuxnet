@@ -19,6 +19,7 @@ const logout = () => {
 </script>
 <template>
     <div>
+
         <Head :title="title" />
 
         <JetBanner />
@@ -121,7 +122,7 @@ const logout = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link  href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                            <Link href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
                             Photos
                             </Link>
                         </li>
@@ -163,15 +164,32 @@ const logout = () => {
                     </ul>
                 </div>
                 <div v-if="$page.props.auth.user === null" class="navbar-end">
-                    <Link href="/register" class="btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
-                        <circle cx="12" cy="10" r="3" />
-                        <circle cx="12" cy="12" r="10" />
-                    </svg>
-                    </Link>
+
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn m-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
+                                <circle cx="12" cy="10" r="3" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li>
+                                <Link href="/login" :class="{ 'btn-active text-white': $page.url === '/login' }">
+                                Login
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/register" :class="{ 'btn-active text-white': $page.url === '/register' }">
+                                Register
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div v-if="$page.props.auth.user !== null" class="navbar-end">
 
                     <div v-if="$page.props.stux === true" class="dropdown dropdown-end">
