@@ -47,5 +47,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
         Route::get('/admin/replies', [AdminController::class, 'replies'])->name('admin.replies');
         Route::delete('/replies/{reply}/delete', [AdminController::class, 'deleteReply'])->name('admin.reply.destroy');
+        Route::delete('/@{user:id}/delete', [AdminController::class, 'deleteUser'])->name('admin.user.destroy');
     });
 });

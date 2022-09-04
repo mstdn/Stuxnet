@@ -15,6 +15,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function deleteUser(User $user)
+    {
+        $user->delete();
+
+        return back();
+    }
+
     public function replies()
     {
         return Inertia::render('Admin/Replies', [

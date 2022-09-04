@@ -57,7 +57,7 @@
                                             <td>{{ reply.reply }}</td>
                                             <td>{{ reply.created_at }}</td>
                                             <td>
-                                                <button v-if="$page.props.stux === true" @click="destroy(reply.id)"
+                                                <button @click="destroy(reply.id)"
                                                     class="btn btn-ghost btn-sm" method="post" type="submit">
                                                     Delete
                                                 </button>

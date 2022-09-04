@@ -19,13 +19,15 @@ let props = defineProps({
                 <div class="hero-content text-center">
                     <div class="max-w-md">
                         <h1 class="text-5xl font-bold text-white">
-                            Stuxnet
+                            {{ $page.props.appName }}
                         </h1>
                         <p class="py-6 text-white">Base of operations.</p>
-                        <InertiaLink href="/blog" class="btn btn-primary">Blogs</InertiaLink>
-                        <InertiaLink href="/photos" class="btn btn-primary">Photos</InertiaLink>
-                        <InertiaLink href="/projects" class="btn btn-primary">Work</InertiaLink>
-                        <InertiaLink href="/links" class="btn btn-primary">Links</InertiaLink>
+                        <div class="btn-group">
+                            <InertiaLink href="/blog" class="btn btn-primary btn-outline">Blog</InertiaLink>
+                            <InertiaLink href="/photos" class="btn btn-primary btn-outline">Photos</InertiaLink>
+                            <InertiaLink href="/projects" class="btn btn-primary btn-outline">Work</InertiaLink>
+                            <InertiaLink href="/links" class="btn btn-primary btn-outline">Links</InertiaLink>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +133,7 @@ let props = defineProps({
                         </div>
                         <h3 class="mb-2 text-xl font-bold">No Data Collection</h3>
                         <p class="text-white">
-                            Do not harvest data, period.    
+                            Do not harvest data, period.
                         </p>
                     </div>
                 </div>
@@ -153,8 +155,7 @@ let props = defineProps({
                             clip-rule="evenodd"></path>
                     </svg>
                 </InertiaLink>
-                <h1
-                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                     Checkout my work
                 </h1>
                 <p class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
@@ -181,8 +182,7 @@ let props = defineProps({
 
         <section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-                <h1
-                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                     Browse Photos
                 </h1>
                 <p class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">

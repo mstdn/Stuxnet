@@ -43,22 +43,26 @@ const logout = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
+                                <Link href="/blog"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
                                 Blog
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/projects" :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
+                                <Link href="/projects"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
                                 Work
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/photos" :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
+                                <Link href="/photos"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
                                 Photos
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/links" :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
+                                <Link href="/links"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
                                 Links
                                 </Link>
                             </li>
@@ -103,7 +107,7 @@ const logout = () => {
                     </div>
 
                     <Link href="/" class="btn btn-ghost normal-case text-xl">
-                        {{ $page.props.appName }}
+                    {{ $page.props.appName }}
                     </Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
@@ -119,17 +123,20 @@ const logout = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/projects" :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
+                            <Link href="/projects"
+                                :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
                             Work
                             </Link>
                         </li>
                         <li>
-                            <Link href="/photos" :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
+                            <Link href="/photos"
+                                :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
                             Photos
                             </Link>
                         </li>
                         <li>
-                            <Link href="/links" :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
+                            <Link href="/links"
+                                :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
                             Links
                             </Link>
                         </li>
@@ -145,7 +152,8 @@ const logout = () => {
                             </a>
                             <ul class="p-2 bg-base-100">
                                 <li>
-                                    <Link href="/about" :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
+                                    <Link href="/about"
+                                        :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
                                     About
                                     </Link>
                                 </li>
@@ -231,13 +239,30 @@ const logout = () => {
                         <ul tabindex="0"
                             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
+                                <InertiaLink v-if="$page.props.stux === true" class="justify-between"
+                                    href="/admin/users"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/admin/users' }">
+                                    Users
+                                    <span class="badge">ADMIN</span>
+                                </InertiaLink>
+                            </li>
+                            <li>
+                                <InertiaLink v-if="$page.props.stux === true" class="justify-between"
+                                    href="/admin/replies"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/admin/replies' }">
+                                    Replies
+                                    <span class="badge">ADMIN</span>
+                                </InertiaLink>
+                            </li>
+                            <li>
                                 <a class="justify-between">
                                     Profile
                                     <span class="badge">Soon</span>
                                 </a>
                             </li>
                             <li>
-                                <InertiaLink :href="route('profile.show')">
+                                <InertiaLink :href="route('profile.show')"
+                                    :class="{ 'btn-active text-white btn-primary': $page.url === '/user/profile' }">
                                     Settings
                                 </InertiaLink>
                             </li>
@@ -302,7 +327,8 @@ const logout = () => {
                 </div>
             </div>
             <div>
-                <p>© 2022. <a href="https://stux.info" target="_blank">@stux</a> · <a href="https://github.com/mstdn/Stuxnet" target="_blank">Source</a></p>
+                <p>© 2022. <a href="https://stux.info" target="_blank">@stux</a> · <a
+                        href="https://github.com/mstdn/Stuxnet" target="_blank">Source</a></p>
             </div>
         </footer>
 
