@@ -102,7 +102,9 @@ const logout = () => {
                         </ul>
                     </div>
 
-                    <Link href="/" class="btn btn-ghost normal-case text-xl">Stuxnet</Link>
+                    <Link href="/" class="btn btn-ghost normal-case text-xl">
+                        {{ $page.props.appName }}
+                    </Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
