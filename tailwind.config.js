@@ -10,14 +10,6 @@ module.exports = {
         "./resources/js/**/*.vue",
     ],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ["Open+Sans", ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
-
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
@@ -32,6 +24,6 @@ module.exports = {
         logs: true,
         rtl: false,
         prefix: "",
-        darkTheme: "cyberpunk",
+        // darkTheme: "black",
     },
 };
