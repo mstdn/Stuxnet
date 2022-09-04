@@ -21,6 +21,7 @@ Route::get('/projects/{category:slug}', [CategoryController::class, 'show'])->na
 Route::get('/project/{post:id}', [PostController::class, 'show'])->name('projects.post');
 Route::get('/links', [LinkController::class, 'index'])->name('links');
 Route::get('/photos', [PhotoController::class, 'index'])->name('photos');
+Route::get('/photos/{photo:id}', [PhotoController::class, 'show'])->name('photo.show');
 Route::get('/@{user:username}', [UserController::class, 'show'])->name('user-profile');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {

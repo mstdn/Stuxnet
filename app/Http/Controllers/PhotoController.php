@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\PhotoResource;
+use App\Http\Resources\ReplyResource;
 use Illuminate\Support\Facades\Redirect;
 
 class PhotoController extends Controller
@@ -24,6 +25,19 @@ class PhotoController extends Controller
                     ->paginate(20)
                     ->withQueryString()
             ),
+        ]);
+    }
+
+    public function show(Photo $photo)
+    {
+        return Inertia::render('Photos/Show', [
+            'photo'         =>  PhotoResource::make($photo),
+            'replies'       =>  ReplyResource::collection(
+                $photo->replies()
+                    ->with('user')
+                    ->oldest()
+                    ->paginate(15)
+            )
         ]);
     }
 

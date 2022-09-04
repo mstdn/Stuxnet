@@ -27,7 +27,9 @@
                                             @{{ post.user.username }}
                                         </InertiaLink>
                                         <div class="m-1">・
-                                            {{ post.time }}
+                                            <InertiaLink :href="route('photo.show', { id: post.id })">
+                                                {{ post.time }}
+                                            </InertiaLink>
                                         </div>
                                     </div>
 
@@ -38,7 +40,9 @@
                                     </div>
                                 </DialogTitle>
                                 <div class="mt-2">
-                                    <img class="object-fill h-full w-full" :src="post.photo" alt="" />
+                                    <InertiaLink :href="route('photo.show', { id: post.id })">
+                                        <img class="object-fill h-full w-full" :src="post.photo" alt="" />
+                                    </InertiaLink>
                                 </div>
                                 <div class="mt-4">
                                     <h2 class="text-gray-900 text-center p-6 text-xl">{{ post.name }}</h2>
