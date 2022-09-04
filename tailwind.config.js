@@ -19,7 +19,8 @@ module.exports = {
     daisyui: {
         styled: true,
         themes: [
-            "lofi",
+            "forest",
+            /* "lofi",
             "dark",
             "light",
             "cupcake",
@@ -32,7 +33,7 @@ module.exports = {
             "valentine",
             "halloween",
             "garden",
-            "forest",
+            "winter",
             "aqua",
             "pastel",
             "fantasy",
@@ -46,8 +47,7 @@ module.exports = {
             "acid",
             "lemonade",
             "night",
-            "coffee",
-            "winter",
+            "coffee", */
         ],
         base: true,
         utils: true,
