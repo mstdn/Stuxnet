@@ -40,7 +40,7 @@ function destroy(id) {
             <div
                 class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
 
-               
+
 
                 <label for="Image1" class="modal-button">
                     <img class="w-full" :src="post.data.file" alt="">
@@ -57,10 +57,10 @@ function destroy(id) {
                 </div>
 
                 <div class="mt-4 md:mt-0">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
                         {{ post.data.title }}
                     </h2>
-                    <p class="mb-6 font-light text-gray-800 md:text-lg">
+                    <p class="mb-6 font-light text-white md:text-lg">
                         {{ post.data.description }}
                     </p>
                     <a v-if="post.data.link" target="_blank" :href="post.data.link" class="btn btn-primary">
@@ -79,8 +79,8 @@ function destroy(id) {
 
         <section class="">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                <div class="font-light text-gray-800 sm:text-lg">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+                <div class="font-light text-white sm:text-lg">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
                         {{ post.data.subtitle }}
                     </h2>
                     <p class="mb-4">
@@ -139,26 +139,25 @@ function destroy(id) {
 
                     <NoReplies class="pb-10" v-if="replies.meta.total === 0" />
 
-                    <ol class="relative border-l border-base-300">
+                    <ol class="relative border-l border-white">
                         <li v-for="reply in replies.data" :key="reply.id" class="mb-10 ml-6">
                             <span
-                                class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-base-200 rounded-full ring-8 ring-base-300">
+                                class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-base-200 rounded-full ring-8 ring-white">
                                 <img class="rounded-full shadow-lg" :src="reply.avatar" alt="">
                             </span>
-                            <div class="p-4 bg-base-200 border border-gray-900">
+                            <div class="p-4 bg-base-200 border border-white">
                                 <div class="justify-between items-center mb-3 sm:flex">
-                                    <time class="mb-1 text-xs font-normal text-gray-900 sm:order-last sm:mb-0">
+                                    <time class="mb-1 text-xs font-normal text-white sm:order-last sm:mb-0">
                                         <button v-if="reply.can.delete === true" @click="destroy(reply.id)"
                                             class="btn btn-ghost btn-xs" method="post" type="submit">
                                             Delete
                                         </button>
                                         {{ reply.time }}
                                     </time>
-                                    <div class="text-sm font-normal text-gray-900 flex">{{ reply.username }}
+                                    <div class="text-sm font-normal text-white flex">{{ reply.username }}
                                         replied</div>
                                 </div>
-                                <div
-                                    class="p-3 text-xs italic font-normal text-gray-900 bg-white border border-gray-900">
+                                <div class="p-3 text-xs italic font-normal text-white bg-base-200 border border-white">
                                     {{ reply.reply }}
                                 </div>
                             </div>

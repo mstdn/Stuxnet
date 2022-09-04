@@ -5,7 +5,7 @@
     <AppLayout title="About">
 
         <template #header>
-            <h2 class="font-semibold text-5xl text-gray-900 text-center leading-tight py-10">
+            <h2 class="font-semibold text-5xl text-base-content text-center leading-tight py-10">
                 About Stuxnet
             </h2>
         </template>

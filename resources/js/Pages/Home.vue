@@ -34,10 +34,10 @@ let props = defineProps({
         <section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div class="max-w-screen-md mb-8 lg:mb-16">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
                         Hosting &amp; developing a new digital world without ads &amp; tracking.
                     </h2>
-                    <p class="text-gray-800 sm:text-xl">
+                    <p class="text-white sm:text-xl">
                         The internet has lost it's way. Websites &amp; platforms are full of advertisements &amp;
                         tracking software, crypto bro's thinking they are creating the new internet while wrecking the
                         planet. It has to stop.
@@ -55,7 +55,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Advertisements</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             We need to find a better way to support websites and platforms.
                         </p>
                     </div>
@@ -70,7 +70,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Tracking</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             Do not collect data you don't need for your service on your users.
                         </p>
                     </div>
@@ -85,7 +85,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Data Selling</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             Never ever sell your users data. It's not yours.
                         </p>
                     </div>
@@ -100,7 +100,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">FOSS</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             Free open source software is one of the solutions.
                         </p>
                     </div>
@@ -115,7 +115,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Ad-Free</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             Instead of forcing your users, go with optional options.
                         </p>
                     </div>
@@ -130,7 +130,7 @@ let props = defineProps({
                             </svg>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">No Data Collection</h3>
-                        <p class="text-gray-800">
+                        <p class="text-white">
                             Do not harvest data, period.    
                         </p>
                     </div>
@@ -154,10 +154,10 @@ let props = defineProps({
                     </svg>
                 </InertiaLink>
                 <h1
-                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                     Checkout my work
                 </h1>
-                <p class="mb-8 text-lg font-normal text-gray-800 lg:text-xl sm:px-16 xl:px-48">
+                <p class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
                     Most of my work is free open source software and can be used by anyone for free. Forever!
                 </p>
             </div>
@@ -182,10 +182,10 @@ let props = defineProps({
         <section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                 <h1
-                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                     Browse Photos
                 </h1>
-                <p class="mb-8 text-lg font-normal text-gray-800 lg:text-xl sm:px-16 xl:px-48">
+                <p class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
                     Free open source photos made with a Canon EOS2000D.
                 </p>
             </div>

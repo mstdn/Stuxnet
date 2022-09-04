@@ -38,27 +38,27 @@ const logout = () => {
                         <ul tabindex="0"
                             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <Link href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
+                                <Link href="/" :class="{ 'btn-active text-white btn-primary': $page.url === '/' }">
                                 Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                                <Link href="/blog" :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
                                 Blog
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
+                                <Link href="/projects" :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
                                 Work
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                                <Link href="/photos" :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
                                 Photos
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                                <Link href="/links" :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
                                 Links
                                 </Link>
                             </li>
@@ -78,19 +78,19 @@ const logout = () => {
                                 <ul class="p-2 bg-base-100">
                                     <li>
                                         <Link href="/about"
-                                            :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                            :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
                                         About
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/privacy-policy"
-                                            :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
+                                            :class="{ 'btn-active text-white btn-primary': $page.url === '/privacy-policy' }">
                                         Privacy Policy
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/terms-of-service"
-                                            :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
+                                            :class="{ 'btn-active text-white btn-primary': $page.url === '/terms-of-service' }">
                                         Terms of Service
                                         </Link>
                                     </li>
@@ -107,27 +107,27 @@ const logout = () => {
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         <li>
-                            <Link href="/" :class="{ 'btn-active text-white': $page.url === '/' }">
+                            <Link href="/" :class="{ 'btn-active text-white btn-primary': $page.url === '/' }">
                             Home
                             </Link>
                         </li>
                         <li>
-                            <Link href="/blog" :class="{ 'btn-active text-white': $page.url === '/blog' }">
+                            <Link href="/blog" :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
                             Blog
                             </Link>
                         </li>
                         <li>
-                            <Link href="/projects" :class="{ 'btn-active text-white': $page.url === '/projects' }">
+                            <Link href="/projects" :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
                             Work
                             </Link>
                         </li>
                         <li>
-                            <Link href="/photos" :class="{ 'btn-active text-white': $page.url === '/photos' }">
+                            <Link href="/photos" :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
                             Photos
                             </Link>
                         </li>
                         <li>
-                            <Link href="/links" :class="{ 'btn-active text-white': $page.url === '/links' }">
+                            <Link href="/links" :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
                             Links
                             </Link>
                         </li>
@@ -143,19 +143,19 @@ const logout = () => {
                             </a>
                             <ul class="p-2 bg-base-100">
                                 <li>
-                                    <Link href="/about" :class="{ 'btn-active text-white': $page.url === '/about' }">
+                                    <Link href="/about" :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
                                     About
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/privacy-policy"
-                                        :class="{ 'btn-active text-white': $page.url === '/privacy-policy' }">
+                                        :class="{ 'btn-active text-white btn-primary': $page.url === '/privacy-policy' }">
                                     Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/terms-of-service"
-                                        :class="{ 'btn-active text-white': $page.url === '/terms-of-service' }">
+                                        :class="{ 'btn-active text-white btn-primary': $page.url === '/terms-of-service' }">
                                     Terms of Service
                                     </Link>
                                 </li>
@@ -251,7 +251,7 @@ const logout = () => {
 
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-base-200">
+            <header v-if="$slots.header" class="bg-base-200 text-base-content">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
