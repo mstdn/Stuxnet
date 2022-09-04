@@ -6,20 +6,36 @@
 
         <template #header>
             <h2 class="font-semibold text-5xl text-base-content text-center leading-tight py-10">
-                About Stuxnet
+                About @stux
             </h2>
         </template>
 
 
         <section class="pt-12">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto px-6 lg:px-8">
 
                 <div class="columns-1 py-10">
-                    Meow, meow! I am stux the web cat and I love to create new things for a better digital tomorrow.
+                    <h2 class="text-3xl mb-4">A little intro..</h2>
+                    <p>
+                        As you may have guessed, I am stux. A few years ago I deleted my Facebook account and started
+                        looking for a better alternative.
+                        <br /><br />
+                        When I came across Mastodon I was instantly sold. For years I have been trying to create or host
+                        some form of social platform but failed every single time.
+                        Mastodon made self-hosting much easier and it was able to connect with something amazing called
+                        'The Fediverse' or Federated Universe. This means everyone can host their own server(network)
+                        and connect with other networks out there!
+                    </p>
+                    <p class="mt-4">
+                        Currently I run a variaty of services on the internet, most of them are free open source services
+                        to give people a privacy-friendly alternative to bigger mainsteam services.
+                        <br /><br />
+                        
+                    </p>
                 </div>
 
 
-                <div class="columns-1 mb-10">
+                <!-- <div class="columns-1 mb-10">
 
                     <div class="card lg:card-side bg-base-100">
                         <figure><img
@@ -33,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
 

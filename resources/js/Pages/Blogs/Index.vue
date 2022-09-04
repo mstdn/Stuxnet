@@ -64,7 +64,7 @@ function destroy(id) {
                     <div v-for="post in blogs.data" :key="post.id" class="card w-full max-w-[650px] mx-auto py-6">
                         <!-- <figure v-if="post.file !== '/storage/'"><img class=" w-ful h-max-[300px]" :src="post.file" />
                         </figure> -->
-                        <div class="card-body border-base-300 border-[1px] bg-base-200 rounded-lg">
+                        <div class="card-body border-white border-[1px] bg-base-200 rounded-lg">
                             <h4 class="card-title">
                                 <div class="flex justify-between w-full">
                                     <div class="flex justify-start">
