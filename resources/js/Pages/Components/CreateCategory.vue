@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="openModal" class="btn-link gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000"
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -22,13 +22,13 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:text-white p-6 text-left align-middle shadow-xl transition-all">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
                                 <div
-                                    class="flex justify-start text-lg font-medium leading-6 mb-2 text-gray-900 dark:text-white">
+                                    class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
                                     Create a category
                                 </div>
-                                <div class="flex justify-end text-sm text-gray-900 dark:text-white">
+                                <div class="flex justify-end text-sm text-white">
                                     {{ characterCount }}/80
                                 </div>
                             </DialogTitle>
@@ -36,14 +36,14 @@
 
                                 <div class="mt-4">
                                     <input type="text" name="name" id="name" v-model="form.name"
-                                        class="input input-primary w-full focus:border-transparent focus:ring-0 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+                                        class="input input-primary w-full focus:border-transparent focus:ring-0"
                                         placeholder="Category Name" />
                                 </div>
                                 <div v-if="form.errors.name" v-text="form.errors.name" class="text-red-500 mt-2"></div>
 
                                 <div class="mt-4">
                                     <input type="text" name="slug" id="slug" v-model="form.slug"
-                                        class="input input-primary w-full focus:border-transparent focus:ring-0 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+                                        class="input input-primary w-full focus:border-transparent focus:ring-0"
                                         placeholder="Category Slug" />
                                 </div>
                                 <div v-if="form.errors.slug" v-text="form.errors.slug" class="text-red-500 mt-2"></div>

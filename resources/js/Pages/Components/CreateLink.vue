@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="openModal" class="btn-link gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000"
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -21,13 +21,13 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:text-white p-6 text-left align-middle shadow-xl transition-all">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
                                 <div
-                                    class="flex justify-start text-lg font-medium leading-6 mb-2 text-gray-900 dark:text-white">
+                                    class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
                                     Add a link
                                 </div>
-                                <div class="flex justify-end text-sm text-gray-900 dark:text-white">
+                                <div class="flex justify-end text-sm text-white">
                                     {{ characterCount }}/80
                                 </div>
                             </DialogTitle>
@@ -35,14 +35,14 @@
 
                                 <div class="mt-4">
                                     <input type="text" name="name" id="name" v-model="form.name"
-                                        class="input input-primary w-full focus:border-transparent focus:ring-0 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+                                        class="input input-primary w-full focus:border-transparent focus:ring-0"
                                         placeholder="Name" />
                                 </div>
                                 <div v-if="form.errors.name" v-text="form.errors.name" class="text-red-500 mt-2"></div>
 
                                 <div class="mt-4">
                                     <input type="text" name="link" id="link" v-model="form.link"
-                                        class="input input-primary w-full focus:border-transparent focus:ring-0 bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+                                        class="input input-primary w-full focus:border-transparent focus:ring-0"
                                         placeholder="URL" />
                                 </div>
                                 <div v-if="form.errors.link" v-text="form.errors.link" class="text-red-500 mt-2"></div>
@@ -87,7 +87,7 @@ import { useForm } from "@inertiajs/inertia-vue3";
 import { computed } from 'vue';
 
 const characterCount = computed(() => {
-    return form.link.length
+    return form.name.length
 });
 
 let form = useForm({

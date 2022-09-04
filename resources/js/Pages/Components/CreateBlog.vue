@@ -1,7 +1,7 @@
 <template>
     <button type="button" @click="openModal" class="btn-link gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
             <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
         </svg>
@@ -21,12 +21,12 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-md bg-white text-gray-900 p-6 text-left align-middle shadow-xl transition-all">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
-                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-gray-900">
+                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
                                     Write a blog
                                 </div>
-                                <div class="flex justify-end text-sm text-gray-900">
+                                <div class="flex justify-end text-sm text-white">
                                     {{ characterCount }}/500
                                 </div>
                             </DialogTitle>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="mt-4">
                                     <resize-textarea v-model="form.description" :rows="4" :maxHeight="400"
-                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0"
+                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0 rounded-lg"
                                         placeholder="Write something meow"></resize-textarea>
                                 </div>
                                 <div v-if="form.errors.description" v-text="form.errors.description"

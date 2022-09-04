@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="openModal" class="btn-link gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000"
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3" />
         </svg>
@@ -20,19 +20,19 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-md bg-white text-gray-900 p-6 text-left align-middle shadow-xl transition-all">
-                            <DialogTitle as="h3" class="text-gray-900 flex justify-between">
-                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-gray-900">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
+                            <DialogTitle as="h3" class="text-white flex justify-between">
+                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
                                     New project
                                 </div>
-                                <div class="flex justify-end text-sm text-gray-900">
+                                <div class="flex justify-end text-sm text-white">
                                     {{ characterCount }}/500
                                 </div>
                             </DialogTitle>
                             <form @submit.prevent="submit">
                                 <div class="mt-2">
                                     <input v-model="form.title" type="text" placeholder="Project Title"
-                                        class="input input-bordered w-full" />
+                                        class="input input-bordered w-full input-primary focus:border-transparent focus:ring-0" />
                                     <div v-if="form.errors.title" v-text="form.errors.title" class="text-red-500 mt-1">
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="mt-4">
                                     <resize-textarea v-model="form.description" :rows="2" :maxHeight="200"
-                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0"
+                                        class="textarea textarea-primary w-full rounded-lg focus:border-transparent focus:ring-0"
                                         placeholder="Add a description"></resize-textarea>
                                 </div>
                                 <div v-if="form.errors.description" v-text="form.errors.description"
@@ -82,7 +82,7 @@
                                 <div class="mt-4">
                                     <div class="flex justify-between">
                                         <select v-model="form.category" name="category" id="category"
-                                            class="select select-bordered w-full">
+                                            class="select select-primary w-full text-white">
                                             <option disabled value="">Category</option>
                                             <option v-for="category in $page.props.categories" :key="category.id"
                                                 :value="category.id" selected>{{ category.name }}</option>
@@ -91,21 +91,21 @@
                                     </div>
                                 </div>
                                 <div class="mt-2">
-                                    <input v-model="form.subtitle" type="text" placeholder="Sub Title"
-                                        class="input input-bordered w-full" />
+                                    <input v-model="form.subtitle" type="text" placeholder="Sub-title"
+                                        class="input input-bordered w-full input-primary focus:border-transparent focus:ring-0" />
                                     <div v-if="form.errors.subtitle" v-text="form.errors.subtitle" class="text-red-500 mt-1">
                                     </div>
                                 </div>
                                 <div class="mt-4">
                                     <resize-textarea v-model="form.content" :rows="2" :maxHeight="200"
-                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0"
+                                        class="textarea textarea-primary w-full rounded-lg focus:border-transparent focus:ring-0"
                                         placeholder="Tell about your project"></resize-textarea>
                                 </div>
                                 <div v-if="form.errors.content" v-text="form.errors.content" class="text-red-500 mt-2">
                                 </div>
                                 <div class="mt-2">
                                     <input v-model="form.link" type="text" placeholder="Enter a link"
-                                        class="input input-bordered w-full" />
+                                        class="input input-bordered w-full input-primary focus:border-transparent focus:ring-0" />
                                     <div v-if="form.errors.link" v-text="form.errors.link" class="text-red-500 mt-1">
                                     </div>
                                 </div>
