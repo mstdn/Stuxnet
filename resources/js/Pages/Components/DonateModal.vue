@@ -49,6 +49,10 @@
                                             class="btn btn-block mt-2">Patreon</a>
                                     </li>
                                     <li>
+                                        <a href="https://github.com/sponsors/Goldfish-Social" target="_blank"
+                                            class="btn btn-block mt-2">GitHub Sponsors</a>
+                                    </li>
+                                    <li>
                                         <a href="https://ko-fi.com/mstdn" target="_blank"
                                             class="btn btn-block mt-2">Ko-Fi</a>
                                     </li>

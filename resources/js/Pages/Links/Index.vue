@@ -31,10 +31,34 @@ function destroy(id) {
 
                     <Empty v-if="links.meta.total === 0" class="columns-1 mt-20" />
 
-                    <div class="columns-1 md:columns-1 lg:columns-1">
+                    <div class="max-w-lg mx-auto">
+                        <div class="py-4" v-for="link in links.data" :key="link.id">
+                            <a target="_blank" :href="link.link" class="btn glass btn-block gap-4">
+                                {{ link.name }}
+                                <div class="badge badge-secondary">
+                                    {{ link.link }}
+                                </div>
+                            </a>
+                            <button v-if="$page.props.stux === true" @click="destroy(link.id)" class="btn-link mt-2"
+                                method="post" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="#d0021b" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path
+                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                    </path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="columns-1 md:columns-1 lg:columns-1">
                         <div class="overflow-x-auto">
                             <table class="table w-full">
-                                <!-- head -->
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -43,9 +67,9 @@ function destroy(id) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- row 1 -->
                                     <tr v-for="link in links.data" :key="link.id">
-                                        <td><a class="btn-link" target="_blank" :href="link.link">{{ link.name }}</a></td>
+                                        <td><a class="btn-link" target="_blank" :href="link.link">{{ link.name }}</a>
+                                        </td>
                                         <td><a class="" target="_blank" :href="link.link">{{ link.link }}</a></td>
                                         <td>
                                             <a class="btn btn-sm" target="_blank" :href="link.link">Go</a>
@@ -59,9 +83,7 @@ function destroy(id) {
                                 </tbody>
                             </table>
                         </div>
-
-                        <!-- <PostCard class="mb-4" v-for="post in posts.data" :key="post.id" :post="post" /> -->
-                    </div>
+                    </div> -->
 
                     <div class="columns-1 md:columns-1 lg:columns-1 mt-6">
                         <SimplePagination v-if="links.meta.total >= 21" :data="links.links" />
