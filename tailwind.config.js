@@ -19,15 +19,15 @@ module.exports = {
     daisyui: {
         styled: true,
         themes: [
-            "forest",
-            /* "lofi",
+            "synthwave",
+            /* "forest",
+            "lofi",
             "dark",
             "light",
             "cupcake",
             "bumblebee",
             "emerald",
             "corporate",
-            "synthwave",
             "retro",
             "cyberpunk",
             "valentine",
@@ -54,6 +54,6 @@ module.exports = {
         logs: true,
         rtl: false,
         prefix: "",
-        //darkTheme: "black",
+        //darkTheme: "forest",
     },
 };

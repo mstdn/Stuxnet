@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="filter hover:brightness-[80%]">
-            <img @click="openModal" class="h-full w-full hover:" :src="post.photo" />
+            <img @click="openModal" class="h-full w-full rounded-lg" :src="post.photo" />
         </div>
         <TransitionRoot appear :show="isOpen" as="template">
             <Dialog as="div" @close="closeModal" class="relative z-60">
@@ -16,7 +16,7 @@
                             enter-to="opacity-100 scale-100" leave="duration-200 ease-in"
                             leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
                             <DialogPanel
-                                class="w-full z-60 lg:max-w-[50%] max-w-[95%] md:max-w-[65%] lg:max-h-[45%] sm:max-h-[60%] transform overflow-hidden bg-white p-4 text-left align-middle shadow-xl transition-all">
+                                class="w-full z-60 lg:max-w-[50%] max-w-[95%] md:max-w-[65%] lg:max-h-[45%] sm:max-h-[60%] transform overflow-hidden bg-white p-4 text-left align-middle shadow-xl transition-all rounded-lg">
                                 <DialogTitle as="h3"
                                     class="flex justify-between text-sm font-medium leading-6 text-gray-900">
                                     <div class="flex justify-start">
@@ -41,7 +41,7 @@
                                 </DialogTitle>
                                 <div class="mt-2">
                                     <InertiaLink :href="route('photo.show', { id: post.id })">
-                                        <img class="object-fill h-full w-full" :src="post.photo" alt="" />
+                                        <img class="object-fill h-full w-full rounded-lg" :src="post.photo" alt="" />
                                     </InertiaLink>
                                 </div>
                                 <div class="mt-4">
