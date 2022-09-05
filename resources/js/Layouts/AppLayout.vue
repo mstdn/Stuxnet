@@ -8,6 +8,7 @@ import CreateBlog from '../Pages/Components/CreateBlog.vue';
 import Mobile from '../Pages/Components/Mobile.vue';
 import CreateLink from '../Pages/Components/CreateLink.vue';
 import CreatePhoto from '../Pages/Components/CreatePhoto.vue';
+import DonateModal from '../Pages/Components/DonateModal.vue';
 
 defineProps({
     title: String,
@@ -106,10 +107,10 @@ const logout = () => {
                             </li>
                         </ul>
                     </div>
-
                     <Link href="/" class="btn btn-ghost normal-case text-xl text-black dark:text-white">
                     {{ $page.props.appName }}
                     </Link>
+                    <DonateModal />
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
@@ -188,7 +189,8 @@ const logout = () => {
                                 <circle cx="12" cy="12" r="10" />
                             </svg>
                         </label>
-                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-gray-900 dark:text-white">
+                        <ul tabindex="0"
+                            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-gray-900 dark:text-white">
                             <li>
                                 <Link href="/login" :class="{ 'btn-active text-white': $page.url === '/login' }">
                                 Login
@@ -214,7 +216,8 @@ const logout = () => {
                                 <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
                             </svg>
                         </label>
-                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 text-black rounded-box w-52 dark:bg-gray-900 dark:text-white">
+                        <ul tabindex="0"
+                            class="dropdown-content menu p-2 shadow bg-base-100 text-black rounded-box w-52 dark:bg-gray-900 dark:text-white">
                             <li>
                                 <CreateLink v-if="$page.props.stux === true" />
                             </li>
@@ -297,7 +300,8 @@ const logout = () => {
 
 
 
-        <footer class="footer footer-center p-10 bg-base-100 text-base-content rounded dark:bg-gray-800 dark:text-white">
+        <footer
+            class="footer footer-center p-10 bg-base-100 text-base-content rounded dark:bg-gray-800 dark:text-white">
             <div class="grid grid-flow-col gap-4">
                 <InertiaLink href="/about" preserve-scroll class="link link-hover">About</InertiaLink>
                 <InertiaLink href="/projects" preserve-scroll class="link link-hover">Projects</InertiaLink>
