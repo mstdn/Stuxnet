@@ -58,10 +58,10 @@ function destroy(id) {
                 </div>
 
                 <div class="mt-4 md:mt-0">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">
                         {{ post.data.title }}
                     </h2>
-                    <p class="mb-6 font-light text-white md:text-lg">
+                    <p class="mb-6 font-light text-black dark:text-white md:text-lg">
                         {{ post.data.description }}
                     </p>
                     <a v-if="post.data.link" target="_blank" :href="post.data.link" class="btn btn-primary">
@@ -80,8 +80,8 @@ function destroy(id) {
 
         <section class="">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                <div class="font-light text-white sm:text-lg">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+                <div class="font-light text-black dark:text-white sm:text-lg">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
                         {{ post.data.subtitle }}
                     </h2>
                     <p class="mb-4">
