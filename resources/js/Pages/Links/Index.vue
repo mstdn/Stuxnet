@@ -33,7 +33,7 @@ function destroy(id) {
 
                     <div class="max-w-lg mx-auto">
                         <div class="py-4" v-for="link in links.data" :key="link.id">
-                            <a target="_blank" :href="link.link" class="btn glass btn-block gap-4">
+                            <a target="_blank" :href="link.link" class="btn btn-block gap-4 btn-primary btn-outline">
                                 {{ link.name }}
                                 <div class="badge badge-secondary">
                                     {{ link.link }}

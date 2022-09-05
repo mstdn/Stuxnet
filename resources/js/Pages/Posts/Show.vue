@@ -41,16 +41,14 @@ function destroy(id) {
             <div
                 class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
 
-
-
                 <label for="Image1" class="modal-button">
-                    <img class="w-full" :src="post.data.file" alt="">
+                    <img class="w-full rounded-lg" :src="post.data.file" alt="">
                 </label>
                 <input type="checkbox" id="Image1" class="modal-toggle" />
                 <div class="modal">
                     <div class="modal-box w-11/12 max-w-5xl">
                         <label for="Image1" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <img class="w-full h-full mt-6" :src="post.data.file" alt="">
+                        <img class="w-full h-full mt-6 rounded-lg" :src="post.data.file" alt="">
                         <div class="modal-action">
                             <label for="Image1" class="btn">Close</label>
                         </div>
@@ -91,13 +89,13 @@ function destroy(id) {
                 <div class="grid grid-cols-2 gap-4 mt-8">
                     <div>
                         <label for="Image3" class="modal-button">
-                            <img class="w-full" :src="post.data.file2" alt="">
+                            <img class="w-full rounded-lg" :src="post.data.file2" alt="">
                         </label>
                         <input type="checkbox" id="Image3" class="modal-toggle" />
                         <div class="modal">
                             <div class="modal-box w-11/12 max-w-5xl">
                                 <label for="Image3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                                <img class="w-full h-full mt-6" :src="post.data.file2" alt="">
+                                <img class="w-full h-full mt-6 rounded-lg" :src="post.data.file2" alt="">
                                 <div class="modal-action">
                                     <label for="Image3" class="btn">Close</label>
                                 </div>
@@ -106,13 +104,13 @@ function destroy(id) {
                     </div>
                     <div>
                         <label for="Image4" class="modal-button">
-                            <img class="mt-4 w-full lg:mt-10" :src="post.data.file3" alt="">
+                            <img class="mt-4 w-full lg:mt-10 rounded-lg" :src="post.data.file3" alt="">
                         </label>
                         <input type="checkbox" id="Image4" class="modal-toggle" />
                         <div class="modal">
                             <div class="modal-box w-11/12 max-w-5xl">
                                 <label for="Image4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                                <img class="w-full h-full mt-6" :src="post.data.file3" alt="">
+                                <img class="w-full h-full mt-6 rounded-lg" :src="post.data.file3" alt="">
                                 <div class="modal-action">
                                     <label for="Image4" class="btn">Close</label>
                                 </div>

@@ -41,7 +41,7 @@ function destroy(id) {
         <section class="">
             <div
                 class="gap-8 items-center py-10 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 md:py-16 lg:px-6">
-                <img class="w-full" :src="photo.data.photo" alt="">
+                <img class="w-full rounded-lg" :src="photo.data.photo" alt="">
                 <div class="mt-4 md:mt-0">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
                         {{ photo.data.name }}
