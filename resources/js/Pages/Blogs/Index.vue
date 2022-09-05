@@ -39,14 +39,8 @@ function destroy(id) {
 </script>
         <template>
     <AppLayout title="Blog">
-        <!-- <template #header>
-                <h1
-                    class="text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-                    Browse <mark class="px-2 text-white bg-yellow-400 ">projects</mark>
-                </h1>
-            </template> -->
 
-        <div class="hero py-10 md:py-16 bg-base-200">
+        <div class="hero py-10 md:py-16 bg-base-200 dark:bg-gray-900 dark:text-white">
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Stuxblogs</h1>
@@ -55,26 +49,24 @@ function destroy(id) {
             </div>
         </div>
 
-        <div class="py-12">
+        <div class="py-12 dark:bg-gray-800 dark:text-white">
             <div class="max-w-7xl mx-auto px-4 lg:px-8">
                 <div class="overflow-hidden">
 
                     <Empty v-if="blogs.meta.total === 0" class="columns-1 mt-20" />
 
                     <div v-for="post in blogs.data" :key="post.id" class="card w-full max-w-[650px] mx-auto py-6">
-                        <!-- <figure v-if="post.file !== '/storage/'"><img class=" w-ful h-max-[300px]" :src="post.file" />
-                        </figure> -->
-                        <div class="card-body border-white border-[1px] bg-base-200 rounded-lg">
+                        <div class="card-body dark:border-white border-gray-800 border-[1px] bg-base-200 rounded-lg dark:bg-gray-900 dark:text-white">
                             <h4 class="card-title">
                                 <div class="flex justify-between w-full">
                                     <div class="flex justify-start">
-                                        <InertiaLink :href="route('blog.post', { id: post.id })" class="btn-link">
+                                        <InertiaLink :href="route('blog.post', { id: post.id })" class="btn-link text-black dark:text-white">
                                             {{ post.time }}
                                         </InertiaLink>
                                     </div>
                                     <div class="flex justify-end">
                                         <InertiaLink :href="route('blog.post', { id: post.id })" class="btn-link">
-                                            <div class="badge badge-outline">
+                                            <div class="badge">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -18,7 +18,7 @@ function destroy(id) {
 <template>
     <AppLayout title="Photos">
 
-        <div class="hero py-10 md:py-16 dark:bg-base-300 bg-base-200">
+        <div class="hero py-10 md:py-16 dark:bg-gray-900 bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Stuxphotos</h1>

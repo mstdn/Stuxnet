@@ -1,11 +1,11 @@
 <template>
     <div class="md:col-span-1 flex justify-between">
         <div class="px-4 sm:px-0">
-            <h3 class="text-lg font-medium text-base-content">
+            <h3 class="text-lg font-medium text-base-content dark:text-white">
                 <slot name="title" />
             </h3>
 
-            <p class="mt-1 text-sm text-base-content">
+            <p class="mt-1 text-sm text-base-content dark:text-white">
                 <slot name="description" />
             </p>
         </div>

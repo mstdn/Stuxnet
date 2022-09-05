@@ -16,9 +16,37 @@ module.exports = {
         require("daisyui"),
     ],
 
+    darkMode: 'media',
+
     daisyui: {
         styled: true,
         themes: [
+            {
+                darkstux: {
+                    primary: "#fed579",
+                    secondary: "#f3f4f6",
+                    accent: "#b91c1c",
+                    neutral: "#ef4444",
+                    "base-100": "#0f0f0f",
+                    info: "#3D72F0",
+                    success: "#84cc16",
+                    warning: "#eab308",
+                    error: "#ef4444",
+                },
+                lightstux: {
+                    primary: "#fed579",
+                    secondary: "#f3f4f6",
+                    accent: "#b91c1c",
+                    neutral: "#ef4444",
+                    "base-100": "#fafafa",
+                    info: "#3D72F0",
+                    success: "#84cc16",
+                    warning: "#eab308",
+                    error: "#ef4444",
+                },
+            },
+        ],
+        /* themes: [
             "synthwave",
             "forest",
             "lofi",
@@ -48,12 +76,12 @@ module.exports = {
             "lemonade",
             "night",
             "coffee",
-        ],
+        ], */
         base: true,
         utils: true,
         logs: true,
         rtl: false,
         prefix: "",
-        darkTheme: "forest",
+        darkTheme: "darkstux",
     },
 };

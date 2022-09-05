@@ -24,19 +24,20 @@ const logout = () => {
 
         <JetBanner />
 
-        <div class="min-h-screen bg-base-100">
-            <nav class="navbar sticky top-0 z-50 bg-base-100 border-b-[1px] border-base-300">
+        <div class="min-h-screen bg-base-100 dark:bg-gray-800 dark:text-white">
+            <nav
+                class="navbar sticky top-0 z-50 bg-base-100 border-b-[1px] border-base-300 dark:bg-gray-900 dark:border-black">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                                stroke="#fed579">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </label>
                         <ul tabindex="0"
-                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 dark:bg-gray-900 dark:text-white rounded-box w-52">
                             <li>
                                 <Link href="/" :class="{ 'btn-active text-white btn-primary': $page.url === '/' }">
                                 Home
@@ -74,12 +75,12 @@ const logout = () => {
                             <li tabindex="0">
                                 <a class="justify-between">
                                     More
-                                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <svg class="#fed579" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                                     </svg>
                                 </a>
-                                <ul class="p-2 bg-base-100">
+                                <ul class="p-2 bg-base-100 dark:bg-gray-900 dark:text-white">
                                     <li>
                                         <Link href="/about"
                                             :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
@@ -106,36 +107,38 @@ const logout = () => {
                         </ul>
                     </div>
 
-                    <Link href="/" class="btn btn-ghost normal-case text-xl">
+                    <Link href="/" class="btn btn-ghost normal-case text-xl text-black dark:text-white">
                     {{ $page.props.appName }}
                     </Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         <li>
-                            <Link href="/" :class="{ 'btn-active text-white btn-primary': $page.url === '/' }">
+                            <Link href="/" class="text-black dark:text-white"
+                                :class="{ 'btn-active text-white btn-primary': $page.url === '/' }">
                             Home
                             </Link>
                         </li>
                         <li>
-                            <Link href="/blog" :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
+                            <Link href="/blog" class="text-black dark:text-white"
+                                :class="{ 'btn-active text-white btn-primary': $page.url === '/blog' }">
                             Blog
                             </Link>
                         </li>
                         <li>
-                            <Link href="/projects"
+                            <Link href="/projects" class="text-black dark:text-white"
                                 :class="{ 'btn-active text-white btn-primary': $page.url === '/projects' }">
                             Work
                             </Link>
                         </li>
                         <li>
-                            <Link href="/photos"
+                            <Link href="/photos" class="text-black dark:text-white"
                                 :class="{ 'btn-active text-white btn-primary': $page.url === '/photos' }">
                             Photos
                             </Link>
                         </li>
                         <li>
-                            <Link href="/links"
+                            <Link href="/links" class="text-black dark:text-white"
                                 :class="{ 'btn-active text-white btn-primary': $page.url === '/links' }">
                             Links
                             </Link>
@@ -143,28 +146,28 @@ const logout = () => {
                         <li tabindex="0">
                             <a>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    fill="none" stroke="#fed579" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="1"></circle>
                                     <circle cx="19" cy="12" r="1"></circle>
                                     <circle cx="5" cy="12" r="1"></circle>
                                 </svg>
                             </a>
-                            <ul class="p-2 bg-base-100">
+                            <ul class="p-2 bg-base-100 dark:bg-gray-900 dark:text-white">
                                 <li>
-                                    <Link href="/about"
+                                    <Link href="/about" class="text-black dark:text-white"
                                         :class="{ 'btn-active text-white btn-primary': $page.url === '/about' }">
                                     About
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/privacy-policy"
+                                    <Link href="/privacy-policy" class="text-black dark:text-white"
                                         :class="{ 'btn-active text-white btn-primary': $page.url === '/privacy-policy' }">
                                     Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/terms-of-service"
+                                    <Link href="/terms-of-service" class="text-black dark:text-white"
                                         :class="{ 'btn-active text-white btn-primary': $page.url === '/terms-of-service' }">
                                     Terms of Service
                                     </Link>
@@ -178,14 +181,14 @@ const logout = () => {
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn m-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                fill="none" stroke="#fed579" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
                                 <circle cx="12" cy="10" r="3" />
                                 <circle cx="12" cy="12" r="10" />
                             </svg>
                         </label>
-                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-gray-900 dark:text-white">
                             <li>
                                 <Link href="/login" :class="{ 'btn-active text-white': $page.url === '/login' }">
                                 Login
@@ -211,7 +214,7 @@ const logout = () => {
                                 <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
                             </svg>
                         </label>
-                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 text-black rounded-box w-52 dark:bg-gray-900 dark:text-white">
                             <li>
                                 <CreateLink v-if="$page.props.stux === true" />
                             </li>
@@ -237,7 +240,7 @@ const logout = () => {
                             </div>
                         </label>
                         <ul tabindex="0"
-                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 text-black dark:bg-gray-900 dark:text-white rounded-box w-52">
                             <li>
                                 <InertiaLink v-if="$page.props.stux === true" class="justify-between"
                                     href="/admin/users"
@@ -278,14 +281,14 @@ const logout = () => {
 
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-base-200 text-base-content">
+            <header v-if="$slots.header" class="bg-base-200 text-base-content dark:bg-gray-800 dark:text-white">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="dark:bg-gray-800">
                 <slot />
             </main>
 
@@ -294,7 +297,7 @@ const logout = () => {
 
 
 
-        <footer class="footer footer-center p-10 bg-base-100 text-base-content rounded">
+        <footer class="footer footer-center p-10 bg-base-100 text-base-content rounded dark:bg-gray-800 dark:text-white">
             <div class="grid grid-flow-col gap-4">
                 <InertiaLink href="/about" preserve-scroll class="link link-hover">About</InertiaLink>
                 <InertiaLink href="/projects" preserve-scroll class="link link-hover">Projects</InertiaLink>
@@ -303,14 +306,16 @@ const logout = () => {
             </div>
             <div>
                 <div class="grid grid-flow-col gap-4">
-                    <a href="https://mstdn.social/@stux" target="_blank" alt="stux on Mastodon" class="hover:bg-base-300 rounded p-2">
+                    <a href="https://mstdn.social/@stux" target="_blank" alt="stux on Mastodon"
+                        class="hover:bg-base-300 rounded p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-mastodon" viewBox="0 0 16 16">
                             <path
                                 d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" />
                         </svg>
                     </a>
-                    <a href="https://github.com/mstdn" target="_blank" alt="stux on GitHub" class="hover:bg-base-300 rounded p-2">
+                    <a href="https://github.com/mstdn" target="_blank" alt="stux on GitHub"
+                        class="hover:bg-base-300 rounded p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-github" viewBox="0 0 16 16">
                             <path
@@ -324,7 +329,8 @@ const logout = () => {
                                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
                         </svg>
                     </a>
-                    <a href="https://paypal.me/stuxOS" target="_blank" alt="stux on PayPal" class="hover:bg-base-300 rounded p-2">
+                    <a href="https://paypal.me/stuxOS" target="_blank" alt="stux on PayPal"
+                        class="hover:bg-base-300 rounded p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-paypal" viewBox="0 0 16 16">
                             <path

@@ -3,6 +3,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
 import PostReply from '../Components/PostReply.vue';
 import BlogReply from '../Components/BlogReply.vue';
 import NoReplies from '../Components/NoReplies.vue';
+import ReplyCard from '../Components/ReplyCard.vue';
 
 let props = defineProps({
     blog: Object,
@@ -36,10 +37,10 @@ function destroy(id) {
             </div>
         </template>
 
-        <section v-if="blog.data.file !== '/storage/'">
+        <section v-if="blog.data.file !== '/storage/'" class="dark:bg-gray-800">
             <div
                 class="gap-8 items-center py-10 px-4 max-w-screen-md mx-auto xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
-                <div class="border-base-300 border-[1px] bg-base-200 text-white rounded-lg">
+                <div class="border-gray-800 border-[1px] bg-base-200 text-black rounded-lg dark:bg-gray-900 dark:text-white">
                     <img class="w-full" :src="blog.data.file" alt="">
                     <div class="flex justify-between">
                         <div class="flex justify-start">
@@ -64,7 +65,7 @@ function destroy(id) {
                         </div>
                     </div>
                     <div class="p-4 mt-4">
-                        <p class="mb-6 font-light text-white md:text-lg">
+                        <p class="mb-6 font-light md:text-lg">
                             {{ blog.data.description }}
                         </p>
                     </div>
@@ -73,10 +74,10 @@ function destroy(id) {
             </div>
         </section>
 
-        <section v-if="blog.data.file === '/storage/'">
+        <section v-if="blog.data.file === '/storage/'" class="dark:bg-gray-800">
             <div
                 class="gap-16 items-center py-10 px-4 mx-auto max-w-screen-md xl:gap-16 md:grid md:grid-cols-1 md:py-16 lg:px-6">
-                <div class="mt-4 border-base-300 border-[1px] bg-base-200 text-white rounded-lg">
+                <div class="mt-4 border-gray-800 border-[1px] bg-base-200 text-black rounded-lg dark:bg-gray-900 dark:text-white">
                     <div class="flex justify-between">
                         <div class="flex justify-start">
                             <div class="avatar mt-6 ml-6">
@@ -99,52 +100,28 @@ function destroy(id) {
                             </div>
                         </div>
                     </div>
-                    <p class="p-6 font-light text-white md:text-lg">
+                    <p class="p-6 font-light md:text-lg">
                         {{ blog.data.description }}
                     </p>
                 </div>
             </div>
         </section>
 
-        <div class="divider"></div>
+        <div class="divider dark:bg-gray-800"></div>
 
-        <div class="mx-auto max-w-screen-md w-full pt-4">
-            <h1 class="text-2xl md:text-3xl font-bold text-center">
+        <div class="mx-auto max-w-screen-md w-full pt-4 dark:bg-gray-800">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-black dark:text-white">
                 {{ blog.data.replycount }} Replies
             </h1>
         </div>
 
-        <section>
+        <section class="dark:bg-gray-800">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-md lg:grid lg:grid-cols-1 lg:py-16 lg:px-6">
                 <div class="grid grid-cols-1 mt-8">
 
                     <NoReplies class="pb-10" v-if="replies.meta.total === 0" />
 
-                    <ol class="relative border-l border-white">
-                        <li v-for="reply in replies.data" :key="reply.id" class="mb-10 ml-6">
-                            <span
-                                class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-base-200 rounded-full ring-8 ring-white">
-                                <img class="rounded-full shadow-lg" :src="reply.avatar" alt="">
-                            </span>
-                            <div class="p-4 bg-base-200 border border-white">
-                                <div class="justify-between items-center mb-3 sm:flex">
-                                    <time class="mb-1 text-xs font-normal text-white sm:order-last sm:mb-0">
-                                        <button v-if="reply.can.delete === true" @click="destroy(reply.id)"
-                                            class="btn btn-ghost btn-xs" method="post" type="submit">
-                                            Delete
-                                        </button>
-                                        {{ reply.time }}
-                                    </time>
-                                    <div class="text-sm font-normal text-white flex">{{ reply.username }}
-                                        replied</div>
-                                </div>
-                                <div
-                                    class="p-3 text-xs italic font-normal text-white bg-base-200 border border-white">
-                                    {{ reply.reply }}
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
+                    <ReplyCard :replies="replies" />
 
                     <BlogReply v-if="$page.props.auth.user !== null" :post="blog" />
                 </div>
