@@ -5,13 +5,13 @@
     <AppLayout title="About">
 
         <template #header>
-            <h2 class="font-semibold text-5xl text-base-content text-center leading-tight py-10">
+            <h2 class="font-semibold text-5xl text-center leading-tight py-10">
                 About @stux
             </h2>
         </template>
 
 
-        <section class="pt-12">
+        <section class="pt-12 dark:bg-gray-800 dark:text-white">
             <div class="max-w-2xl mx-auto px-6 lg:px-8">
 
                 <div class="columns-1 py-10">

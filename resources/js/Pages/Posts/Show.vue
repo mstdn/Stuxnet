@@ -3,6 +3,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
 import PostReply from '../Components/PostReply.vue';
 import SimplePagination from '../Components/SimplePagination.vue';
 import NoReplies from '../Components/NoReplies.vue';
+import ReplyCard from '../Components/ReplyCard.vue';
 
 let props = defineProps({
     post: Object,
@@ -139,30 +140,7 @@ function destroy(id) {
 
                     <NoReplies class="pb-10" v-if="replies.meta.total === 0" />
 
-                    <ol class="relative border-l border-white">
-                        <li v-for="reply in replies.data" :key="reply.id" class="mb-10 ml-6">
-                            <span
-                                class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-base-200 rounded-full ring-8 ring-white">
-                                <img class="rounded-full shadow-lg" :src="reply.avatar" alt="">
-                            </span>
-                            <div class="p-4 bg-base-200 border border-white">
-                                <div class="justify-between items-center mb-3 sm:flex">
-                                    <time class="mb-1 text-xs font-normal text-white sm:order-last sm:mb-0">
-                                        <button v-if="reply.can.delete === true" @click="destroy(reply.id)"
-                                            class="btn btn-ghost btn-xs" method="post" type="submit">
-                                            Delete
-                                        </button>
-                                        {{ reply.time }}
-                                    </time>
-                                    <div class="text-sm font-normal text-white flex">{{ reply.username }}
-                                        replied</div>
-                                </div>
-                                <div class="p-3 text-xs italic font-normal text-white bg-base-200 border border-white">
-                                    {{ reply.reply }}
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
+                    <ReplyCard :replies="replies" />
 
                     <SimplePagination v-if="replies.meta.total >= 21" :data="replies.links" />
 

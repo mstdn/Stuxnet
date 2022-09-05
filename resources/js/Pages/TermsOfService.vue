@@ -10,11 +10,11 @@ defineProps({
 <template>
     <AppLayout title="Terms of Service">
 
-        <div class="text-base-content">
-            <div class="py-4 bg-base-300">
+        <div class="text-black dark:text-white">
+            <div class="py-4 bg-base-100 dark:bg-gray-800 ">
                 <div class="min-h-screen flex flex-col items-center pt-6">
 
-                    <div class="w-full sm:max-w-2xl mt-6 p-6 bg-base-300 overflow-hidden sm:rounded-lg prose"
+                    <div class="w-full sm:max-w-2xl mt-6 p-6 bg-base-200 dark:bg-gray-900 dark:text-white overflow-hidden sm:rounded-lg prose"
                         v-html="terms" />
                 </div>
             </div>

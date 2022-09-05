@@ -16,14 +16,7 @@ function destroy(id) {
 </script>
         <template>
     <AppLayout title="Links">
-        <!-- <template #header>
-                <h1
-                    class="text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-                    Browse <mark class="px-2 text-white bg-yellow-400 ">projects</mark>
-                </h1>
-            </template> -->
-
-        <div class="hero py-10 md:py-16 dark:bg-base-300 bg-base-200">
+        <div class="hero py-10 md:py-16 dark:bg-gray-900 bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Stuxlinks</h1>

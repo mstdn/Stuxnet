@@ -9,7 +9,7 @@
     
     const classes = computed(() => {
         return props.active
-            ? 'text-primary active'
+            ? 'text-primary active dark:bg-gray-800'
             : 'text-primary';
     });
     </script>

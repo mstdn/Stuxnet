@@ -5,7 +5,7 @@
                 Reply</label>
             <div class="relative">
                 <input type="text" v-model="form.reply" id="reply"
-                    class="input p-4 w-full text-sm text-white bg-base-300 border-white"
+                    class="input p-4 w-full text-sm dark:text-white bg-base-300 border-gray-900 text-black dark:bg-gray-900 "
                     placeholder="Type your reply">
                 <button type="submit" :disabled="form.processing" class="absolute right-2.5 bottom-2.5 px-4 py-2 btn btn-sm">Reply</button>
             </div>
