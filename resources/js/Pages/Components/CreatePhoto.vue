@@ -1,7 +1,7 @@
 <template>
     <button type="button" @click="openModal" class="btn-link gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="#fed579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            stroke="#62b570" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2" />
             <circle cx="8.5" cy="8.5" r="1.5" />
             <path d="M20.4 14.5L16 10 4 20" />
