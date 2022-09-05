@@ -20,7 +20,7 @@ module.exports = {
         styled: true,
         themes: [
             "synthwave",
-            /* "forest",
+            "forest",
             "lofi",
             "dark",
             "light",
@@ -47,13 +47,13 @@ module.exports = {
             "acid",
             "lemonade",
             "night",
-            "coffee", */
+            "coffee",
         ],
         base: true,
         utils: true,
         logs: true,
         rtl: false,
         prefix: "",
-        //darkTheme: "forest",
+        darkTheme: "forest",
     },
 };
