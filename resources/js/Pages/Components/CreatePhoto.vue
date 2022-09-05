@@ -22,19 +22,19 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-100 text-black dark:bg-gray-900 dark:text-white p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
-                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
+                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-black dark:text-white">
                                     New photo
                                 </div>
-                                <div class="flex justify-end text-sm text-white">
+                                <div class="flex justify-end text-sm text-black dark:text-white">
                                     {{ characterCount }}/80
                                 </div>
                             </DialogTitle>
                             <form @submit.prevent="submit">
                                 <div class="mt-2">
                                     <input v-model="form.name" type="text" placeholder="Photo Title"
-                                        class="input input-primary w-full focus:border-transparent focus:ring-0" />
+                                        class="input input-primary w-full focus:border-transparent focus:ring-0 bg-base-100 text-black dark:bg-gray-900 dark:text-white" />
                                     <div v-if="form.errors.name" v-text="form.errors.name" class="text-red-500 mt-1">
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                 <div class="mt-4">
                                     <div class="flex justify-between">
                                         <select v-model="form.category" name="category" id="category"
-                                            class="select select-primary w-full">
+                                            class="select select-primary w-full bg-base-100 text-black dark:bg-gray-900 dark:text-white">
                                             <option disabled value="">Category</option>
                                             <option v-for="category in $page.props.categories" :key="category.id"
                                                 :value="category.id" selected>{{ category.name }}</option>

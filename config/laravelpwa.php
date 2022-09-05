@@ -3,11 +3,11 @@
 return [
     'name' => 'stux',
     'manifest' => [
-        'name' => env('APP_NAME', 'Stuxnet'),
+        'name' => env('APP_NAME', 'stux'),
         'short_name' => 'stux',
         'start_url' => '/',
-        'background_color' => '#fede00',
-        'theme_color' => '#fede00',
+        'background_color' => '#62b670',
+        'theme_color' => '#62b670',
         'display' => 'standalone',
         'orientation'=> 'any',
         'status_bar'=> 'black',
@@ -59,18 +59,18 @@ return [
         ],
         'shortcuts' => [
             [
-                'name' => 'Shortcut Link 1',
-                'description' => 'Shortcut Link 1 Description',
-                'url' => '/shortcutlink1',
+                'name' => 'Home',
+                'description' => 'Frontpage',
+                'url' => '/',
                 'icons' => [
                     "src" => "/images/icons/icon-72x72.png",
                     "purpose" => "any"
                 ]
             ],
             [
-                'name' => 'Shortcut Link 2',
-                'description' => 'Shortcut Link 2 Description',
-                'url' => '/shortcutlink2'
+                'name' => 'Blogs',
+                'description' => 'Blogs',
+                'url' => '/blog'
             ]
         ],
         'custom' => []

@@ -21,12 +21,12 @@
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
                         <DialogPanel
-                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-300 text-white p-6 text-left align-middle shadow-xl transition-all">
+                            class="w-full max-w-md transform overflow-hidden rounded-lg bg-base-100 text-black dark:bg-gray-900 dark:text-white p-6 text-left align-middle shadow-xl transition-all">
                             <DialogTitle as="h3" class="text-gray-900 flex justify-between">
-                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-white">
+                                <div class="flex justify-start text-lg font-medium leading-6 mb-2 text-black dark:text-white">
                                     Write a blog
                                 </div>
-                                <div class="flex justify-end text-sm text-white">
+                                <div class="flex justify-end text-sm text-black dark:text-white">
                                     {{ characterCount }}/500
                                 </div>
                             </DialogTitle>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="mt-4">
                                     <resize-textarea v-model="form.description" :rows="4" :maxHeight="400"
-                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0 rounded-lg"
+                                        class="textarea textarea-primary w-full focus:border-transparent focus:ring-0 rounded-lg bg-base-100 text-black dark:bg-gray-900 dark:text-white"
                                         placeholder="Write something meow"></resize-textarea>
                                 </div>
                                 <div v-if="form.errors.description" v-text="form.errors.description"
